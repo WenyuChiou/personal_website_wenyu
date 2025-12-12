@@ -284,21 +284,22 @@ window.contentData = {
                             "en": "Jan 2024 – Jun 2024",
                             "zh": "2024年1月 – 2024年6月"
                         },
+                        "image": "assets/images/文昱_GM20230816.jpg",
                         "bullets": {
                             "en": [
-                                "Developed agent-based models for flood adaptation using cognitive frameworks (PMT, PADM)",
-                                "Integrated hazard, exposure, vulnerability, and financial modules in a coupled ABM system",
-                                "Explored LLM-enabled agents for behavioral decision simulation"
+                                "Developed 3D groundwater flow simulation models for coastal aquifer systems",
+                                "Established Nature-Based Solutions (NBS) assessment indicators and evaluation framework",
+                                "Integrated hydrogeological modeling with sustainability assessment metrics"
                             ],
                             "zh": [
-                                "使用認知框架（PMT、PADM）開發洪水調適的代理人基模型",
-                                "整合災害、曝露、脆弱度與財務模組於耦合代理人基模型系統",
-                                "探索 LLM 賦能的代理人用於行為決策模擬"
+                                "開發沿海含水層系統的 3D 地下水流模擬模型",
+                                "建立自然解方（NBS）評估指標與評估架構",
+                                "整合水文地質模擬與永續性評估指標"
                             ]
                         },
                         "summary": {
-                            "en": "Responsible for developing agent-based models for flood adaptation, integrating cognitive behavior and disaster risk modules",
-                            "zh": "負責開發洪水調適的代理人基模型，整合認知行為與災害風險模組"
+                            "en": "Responsible for 3D groundwater flow simulation and Nature-Based Solutions (NBS) assessment indicator development",
+                            "zh": "負責 3D 地下水流模擬及自然解方（NBS）評估指標開發"
                         }
                     },
                     {
