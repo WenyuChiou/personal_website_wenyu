@@ -1820,7 +1820,7 @@
 
     /* ========== Left Sidebar ========== */
     .sidebar {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
       width: var(--sidebar-width);
@@ -1966,9 +1966,15 @@
       transform: translateY(-2px);
     }
 
+    /* Main Content Area (with sidebar) */
     .main-content {
-      margin-left: var(--sidebar-width);
+      margin-left: 0;
+      /* Grid handles the spacing */
       min-height: 100vh;
+      width: 100%;
+      /* Ensure it takes full width of its column */
+      overflow-x: hidden;
+      /* Prevent horizontal scroll */
     }
 
     .app-layout nav {
@@ -2000,6 +2006,7 @@
       }
 
       .sidebar {
+        position: fixed;
         left: -100%;
         transition: left 0.3s ease;
         z-index: 1100;

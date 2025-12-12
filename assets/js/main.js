@@ -531,11 +531,18 @@ function setupProjectDrawer() {
   function openDrawer(category) {
     const lang = currentLang;
 
-    // Set title
-    drawerTitle.textContent = categoryTitles[category]?.[lang] || 'Projects';
+    // Set title - Always show "Projects & Research"
+    const title = lang === 'zh' ? '專案與研究' : 'Projects & Research';
+    drawerTitle.textContent = title;
 
-    // Filter and render projects
-    const projects = data.projects.items.filter(p => p.category === category);
+    // Filter and render projects - Show ALL projects but exclude 'intern' tag if needed
+    // Assuming we want to show everything that ISN'T explicitly an intern report if that's the goal,
+    // Or just show everything since we merged them.
+    // User requested "Research就不要放interm 的部分".
+    // So we filter out items with 'Intern' tag or keyword if present, or rely on manual data pruning.
+    // For now, I will modify it to show ALL items since we will clean up the data in content.js.
+    const projects = data.projects.items;
+
     drawerContent.innerHTML = projects.map(project => `
       <div class="drawer-project-card reveal">
         ${project.image ? `
