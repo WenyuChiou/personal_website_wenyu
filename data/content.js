@@ -486,6 +486,27 @@ window.contentData = {
                 "links": { "poster": "#" }
             },
             {
+                "id": "jtae-2020",
+                "category": "research",
+                "name": {
+                    "en": "Seasonal Variations of Water and Energy Budget of Evergreen Broad-leaved Forest in Central Taiwan",
+                    "zh": "台灣中部常綠闊葉林水分與能量收支的季節變化"
+                },
+                "description": {
+                    "en": "Published research on seasonal variations of water and energy budget in evergreen broad-leaved forest ecosystems in central Taiwan.",
+                    "zh": "關於台灣中部常綠闊葉林生態系統水分與能量收支季節變化的已發表研究。"
+                },
+                "fullDescription": {
+                    "en": "This study investigates the seasonal variations of water and energy budget in an evergreen broad-leaved forest ecosystem in central Taiwan. The research analyzes evapotranspiration, precipitation patterns, and energy exchange processes to understand the hydrological and energy dynamics of this forest type. Published in the Journal of Taiwan Agricultural Engineering in 2020.",
+                    "zh": "本研究探討台灣中部常綠闊葉林生態系統水分與能量收支的季節變化。透過分析蒸發散、降水型態與能量交換過程，以了解此類森林的水文與能量動態。2020 年發表於台灣農業工程學刊。"
+                },
+                "image": "",
+                "tags": ["Publication", "Hydrology", "Forest Ecology", "JTAE 2020"],
+                "links": {
+                    "paper": "assets/documents/publications/jtae-2020.pdf"
+                }
+            },
+            {
                 "id": "ai-trader",
                 "category": "side",
                 "name": {
@@ -537,37 +558,7 @@ window.contentData = {
                 "links": {
                     "github": "https://github.com/WenyuChiou/Event-Driven-Strategy",
                     "paper": ""
-                }
-            },
-            {
-                "id": "abm-flood",
-                "category": "research",
-                "name": {
-                    "en": "Agent-Based Flood Adaptation Model",
-                    "zh": "代理人基模型洪水調適模型"
                 },
-                "description": {
-                    "en": "A coupled ABM framework simulating household flood adaptation decisions under social heterogeneity, integrating cognitive models (PMT/PADM) with hazard and financial modules.",
-                    "zh": "耦合的代理人基模型框架，模擬在社會異質性下家庭的洪水調適決策，整合認知模型（PMT/PADM）與災害及財務模組。"
-                },
-                "fullDescription": {
-                    "en": "This project develops a comprehensive agent-based modeling system to simulate long-term household adaptation to flood risk. The framework incorporates Protection Motivation Theory (PMT) and Protective Action Decision Model (PADM) to represent cognitive decision-making processes. It distinguishes between majority group (MG) and non-majority group (NMG) households to account for social heterogeneity in resources, risk perception, and adaptation capacity. The model is coupled with hazard modules (flood depth grids), exposure tracking, vulnerability assessment, and household financial simulation.",
-                    "zh": "本專案開發一套全面的代理人基模型系統，模擬家庭對洪水風險的長期調適行為。框架整合保護動機理論（PMT）與保護行動決策模型（PADM）來表達認知決策過程。模型區分主流群體（MG）與非主流群體（NMG）家庭，以考量資源、風險認知與調適能力的社會異質性。模型與災害模組（洪水深度網格）、曝露追蹤、脆弱度評估與家庭財務模擬耦合。"
-                },
-                "image": "assets/images/projects/abm-flood/cover.jpg",
-                "tags": [
-                    "Python",
-                    "ABM",
-                    "Risk Analysis",
-                    "LLM Agents"
-                ],
-                "links": {
-                    "github": "https://github.com/WenyuChiou/FLOODABM",
-                    "demo": "",
-                    "paper": "",
-                    "report": "assets/documents/publications/ncdr-report.pdf"
-                }
-            },
             {
                 "id": "ies-isotopes",
                 "category": "research",
@@ -591,16 +582,14 @@ window.contentData = {
                     "Academia Sinica"
                 ],
                 "links": {
-                    "github": "",
-                    "paper": "",
-                    "poster": "assets/documents/publications/agu2024-poster.pdf"
+                    "poster": "assets/documents/publications/ies-poster.pdf"
                 }
             },
             {
                 "id": "ncdr",
                 "category": "research",
                 "name": {
-                    "en": "NCDR Summer Internship 2023",
+                    "en": "NCDR Summer Internship 2022",
                     "zh": "國家災害防救科技中心 暑期實習"
                 },
                 "description": {
