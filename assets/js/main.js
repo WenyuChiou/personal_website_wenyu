@@ -509,6 +509,8 @@ function setupBackToTop() {
  * Handles bookmark tabs and off-canvas drawer panel
  */
 function setupProjectDrawer() {
+  console.log('[Drawer] Setting up project drawer...');
+
   const drawer = document.getElementById('projectDrawer');
   const backdrop = document.getElementById('drawerBackdrop');
   const closeBtn = document.getElementById('drawerClose');
@@ -516,10 +518,26 @@ function setupProjectDrawer() {
   const drawerContent = document.getElementById('drawerContent');
   const bookmarkTabs = document.querySelectorAll('.bookmark-tab');
 
-  if (!drawer || !backdrop || !bookmarkTabs.length) return;
+  console.log('[Drawer] Elements found:', {
+    drawer: !!drawer,
+    backdrop: !!backdrop,
+    closeBtn: !!closeBtn,
+    drawerTitle: !!drawerTitle,
+    drawerContent: !!drawerContent,
+    bookmarkTabs: bookmarkTabs.length
+  });
+
+  if (!drawer || !backdrop || !bookmarkTabs.length) {
+    console.warn('[Drawer] Missing required elements, aborting setup');
+    return;
+  }
 
   const data = window.contentData;
-  if (!data || !data.projects) return;
+  console.log('[Drawer] Content data loaded:', !!data, !!data?.projects);
+  if (!data || !data.projects) {
+    console.warn('[Drawer] No content data found, aborting setup');
+    return;
+  }
 
   // Category titles
   const categoryTitles = {
