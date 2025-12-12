@@ -246,12 +246,16 @@ window.toggleDetails = function (btn) {
 /**
  * Render Projects
  */
-function renderProjects(lang) {
+function renderProjects(lang, filterCategory = 'all') {
   const container = document.getElementById('projects-grid');
   if (!container) return;
 
-  container.innerHTML = window.contentData.projects.items.map(proj => `
-    <div class="project-card" onclick="openProjectModal('${proj.id}')">
+  const projects = window.contentData.projects.items.filter(proj =>
+    filterCategory === 'all' || proj.category === filterCategory
+  );
+
+  container.innerHTML = projects.map(proj => `
+    <div class="project-card" data-category="${proj.category || 'research'}" onclick="openProjectModal('${proj.id}')">
       ${proj.image ? `<div class="project-thumbnail" style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; max-height: 180px;">
         <img src="${proj.image}" alt="${proj.name[lang]}" style="width: 100%; height: 100%; object-fit: cover;">
       </div>` : ''}
@@ -269,6 +273,16 @@ function renderProjects(lang) {
       </div>
     </div>
   `).join('');
+}
+
+// Filter Projects by category
+window.filterProjects = function (category, btn) {
+  // Update active button
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Re-render with filter
+  renderProjects(currentLang, category);
 }
 
 /**

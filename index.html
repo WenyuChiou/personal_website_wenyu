@@ -145,6 +145,14 @@
     <section id="projects" class="section projects">
       <div class="container">
         <h2 class="section-title" data-i18n="projects_title">Projects & Portfolio</h2>
+
+        <!-- Project Tabs -->
+        <div class="project-tabs" style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center;">
+          <button class="tab-btn active" data-filter="all" onclick="filterProjects('all', this)">All</button>
+          <button class="tab-btn" data-filter="research" onclick="filterProjects('research', this)">Research</button>
+          <button class="tab-btn" data-filter="trading" onclick="filterProjects('trading', this)">Trading</button>
+        </div>
+
         <div class="projects-grid" id="projects-grid">
           <!-- Dynamic Content -->
         </div>

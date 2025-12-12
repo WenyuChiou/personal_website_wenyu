@@ -440,6 +440,7 @@ window.contentData = {
         "items": [
             {
                 "id": "ai-trader",
+                "category": "trading",
                 "name": {
                     "en": "AI-Trader Ollama",
                     "zh": "AI-Trader Ollama 全自動交易系統"
@@ -466,6 +467,7 @@ window.contentData = {
             },
             {
                 "id": "event-driven",
+                "category": "trading",
                 "name": {
                     "en": "Event-Driven Trading Strategy",
                     "zh": "事件驅動交易策略 (Hydraulic Jump)"
@@ -492,6 +494,7 @@ window.contentData = {
             },
             {
                 "id": "abm-flood",
+                "category": "research",
                 "name": {
                     "en": "Agent-Based Flood Adaptation Model",
                     "zh": "代理人基模型洪水調適模型"
@@ -520,6 +523,7 @@ window.contentData = {
             },
             {
                 "id": "groundwater",
+                "category": "research",
                 "name": {
                     "en": "Coastal Groundwater Flow Modeling",
                     "zh": "沿海地下水流動模擬"
@@ -547,6 +551,7 @@ window.contentData = {
             },
             {
                 "id": "ncdr",
+                "category": "research",
                 "name": {
                     "en": "NCDR Summer Internship 2023",
                     "zh": "國家災害防救科技中心 暑期實習"
