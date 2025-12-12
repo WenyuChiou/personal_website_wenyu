@@ -444,22 +444,22 @@ window.contentData = {
         },
         "items": [
             {
-                "id": "agu-2025",
+                "id": "abm-flood",
                 "category": "research",
                 "name": {
-                    "en": "Coupling agent-based modeling framework",
-                    "zh": "Coupling agent-based modeling framework"
+                    "en": "Agent-Based Flood Adaptation Model",
+                    "zh": "代理人基洪水調適模型"
                 },
                 "description": {
-                    "en": "Poster visualization of utilizing Large Language Models to simulate heterogeneous human decision-making in flood adaptation.",
-                    "zh": "利用大型語言模型模擬洪水調適中異質人類決策的海報視覺化。"
+                    "en": "A comprehensive agent-based modeling system to simulate long-term household adaptation to flood risk, incorporating Protection Motivation Theory (PMT) and Protective Action Decision Model (PADM).",
+                    "zh": "一個全面的代理人基模型系統，用於模擬家庭對洪水風險的長期調適，整合保護動機理論（PMT）與保護行動決策模型（PADM）。"
                 },
                 "fullDescription": {
-                    "en": "Preview of the AGU 2025 poster presenting the integration of LLM cognitive agents into Agent-Based Models for improved decision realism.",
-                    "zh": "AGU 2025 海報預覽，展示將 LLM 認知代理人整合至代理人基模型以提升決策真實性。"
+                    "en": "This project develops a comprehensive agent-based modeling system to simulate long-term household adaptation to flood risk. The framework incorporates Protection Motivation Theory (PMT) and Protective Action Decision Model (PADM) to represent cognitive decision-making processes. It distinguishes between majority group (MG) and non-majority group (NMG) households to account for social heterogeneity in resources, risk perception, and adaptation capacity. The model is coupled with hazard modules (flood depth grids), exposure tracking, vulnerability assessment, and household financial simulation.",
+                    "zh": "本專案開發一個全面的代理人基模型系統，用於模擬家庭對洪水風險的長期調適。框架整合保護動機理論（PMT）與保護行動決策模型（PADM）來呈現認知決策過程。它區分多數群體（MG）與非多數群體（NMG）家庭，以考慮資源、風險感知與調適能力的社會異質性。模型與危害模組（洪水深度網格）、暴露追蹤、脆弱性評估及家庭財務模擬耦合。"
                 },
                 "image": "assets/images/projects/agu2025/poster.jpg",
-                "tags": ["AGU 2025", "LLM Agents", "Poster"],
+                "tags": ["AGU 2025", "ABM", "PMT", "PADM", "Flood Risk"],
                 "links": { "poster": "#" }
             },
             {
