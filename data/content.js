@@ -440,8 +440,8 @@ window.contentData = {
     },
     "projects": {
         "title": {
-            "en": "Projects & Portfolio",
-            "zh": "專案作品"
+            "en": "My Work",
+            "zh": "我的作品"
         },
         "items": [
             {
@@ -561,32 +561,6 @@ window.contentData = {
                 }
             },
             {
-                "id": "ies-isotopes",
-                "category": "research",
-                "name": {
-                    "en": "IES Internship: Water Isotopes",
-                    "zh": "中研院地球所 IES 實習：水同位素研究"
-                },
-                "description": {
-                    "en": "Research on water isotope analysis conducted during the internship at Academia Sinica, Institute of Earth Sciences.",
-                    "zh": "在中研院地球所實習期間進行的水同位素分析研究。"
-                },
-                "fullDescription": {
-                    "en": "During my internship at the Institute of Earth Sciences (IES), Academia Sinica, I conducted research on water isotopes to understand hydrological processes. I utilized numerical modeling techniques to analyze isotopic data, contributing to the understanding of regional water cycles.",
-                    "zh": "在中研院地球所 (IES) 實習期間，我進行了水同位素研究以了解水文過程。我利用數值模擬技術分析同位素數據，致力於了解區域水循環。"
-                },
-                "image": "assets/images/projects/ies/cover.jpg",
-                "tags": [
-                    "Isotope Hydrology",
-                    "Numerical Modeling",
-                    "Internship",
-                    "Academia Sinica"
-                ],
-                "links": {
-                    "poster": "assets/documents/publications/ies-poster.pdf"
-                }
-            },
-            {
                 "id": "ncdr",
                 "category": "research",
                 "name": {
@@ -598,8 +572,8 @@ window.contentData = {
                     "zh": "氣候變遷調適與災害風險減緩之研究。"
                 },
                 "fullDescription": {
-                    "en": "Participated in the 2023 Summer Internship at the National Science and Technology Center for Disaster Reduction (NCDR). Focused on climate change impact assessment and adaptation strategies.",
-                    "zh": "參與 2023 年國家災害防救科技中心（NCDR）暑期實習，專注於氣候變遷影響評估與調適策略。"
+                    "en": "Participated in the 2022 Summer Internship at the National Science and Technology Center for Disaster Reduction (NCDR). Focused on climate change impact assessment and adaptation strategies.",
+                    "zh": "參與 2022 年國家災害防救科技中心（NCDR）暑期實習，專注於氣候變遷影響評估與調適策略。"
                 },
                 "image": "assets/images/projects/ncdr/cover.jpg",
                 "tags": [
@@ -609,6 +583,32 @@ window.contentData = {
                 ],
                 "links": {
                     "report": "assets/documents/publications/ncdr-report.pdf"
+                }
+            },
+            {
+                "id": "ies-isotopes",
+                "category": "research",
+                "name": {
+                    "en": "IES Internship: Water Isotopes",
+                    "zh": "中研院地球所 IES 實習：水同位素研究"
+                },
+                "description": {
+                    "en": "Research on water isotope analysis conducted during the internship at Academia Sinica, Institute of Earth Sciences.",
+                    "zh": "在中研院地球所實習期間進行的水同位素分析研究。"
+                },
+                "fullDescription": {
+                    "en": "During my internship at the Institute of Earth Sciences (IES), Academia Sinica, I conducted research on water isotopes to understand hydrological processes and regional water cycles.",
+                    "zh": "在中研院地球所 (IES) 實習期間，我進行了水同位素研究以了解水文過程與區域水循環。"
+                },
+                "image": "assets/images/projects/ies/cover.jpg",
+                "tags": [
+                    "Isotope Hydrology",
+                    "Lab Analysis",
+                    "Internship",
+                    "Academia Sinica"
+                ],
+                "links": {
+                    "poster": "assets/documents/publications/ies-poster.pdf"
                 }
             },
             {
