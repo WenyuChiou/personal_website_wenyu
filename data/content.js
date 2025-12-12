@@ -116,8 +116,8 @@ window.contentData = {
                     "Numerical Modeling",
                     "Hydrology & Groundwater",
                     "Risk & Resilience Analysis",
-                    "Financial Risk Assessment",
-                    "Social Science Quantitative Research",
+                    "Financial Risk Assessment (Flood Insurance)",
+                    "Quant. Social Research (SEM, Survey)",
                     "Climate Adaptation",
                     "Bayesian Inference"
                 ]
