@@ -583,242 +583,241 @@ window.contentData = {
                     "Internship",
                     "Academia Sinica"
                 ],
-                ],
-        "links": {
-            "github": "",
-            "paper": "",
-            "poster": "assets/documents/publications/agu2024-poster.pdf"
-        }
-    },
+                "links": {
+                    "github": "",
+                    "paper": "",
+                    "poster": "assets/documents/publications/agu2024-poster.pdf"
+                }
+            },
             {
-    "id": "ncdr",
-        "category": "research",
-            "name": {
-        "en": "NCDR Summer Internship 2023",
-            "zh": "國家災害防救科技中心 暑期實習"
-    },
-    "description": {
-        "en": "Research on climate change adaptation and disaster risk reduction.",
-            "zh": "氣候變遷調適與災害風險減緩之研究。"
-    },
-    "fullDescription": {
-        "en": "Participated in the 2023 Summer Internship at the National Science and Technology Center for Disaster Reduction (NCDR). Focused on climate change impact assessment and adaptation strategies.",
-            "zh": "參與 2023 年國家災害防救科技中心（NCDR）暑期實習，專注於氣候變遷影響評估與調適策略。"
-    },
-    "image": "assets/images/projects/ncdr/cover.jpg",
-        "tags": [
-            "Internship",
-            "Climate Change",
-            "Risk Assessment"
-        ],
-            "links": {
-        "report": "assets/documents/publications/ncdr-report.pdf"
-    }
-}
+                "id": "ncdr",
+                "category": "research",
+                "name": {
+                    "en": "NCDR Summer Internship 2023",
+                    "zh": "國家災害防救科技中心 暑期實習"
+                },
+                "description": {
+                    "en": "Research on climate change adaptation and disaster risk reduction.",
+                    "zh": "氣候變遷調適與災害風險減緩之研究。"
+                },
+                "fullDescription": {
+                    "en": "Participated in the 2023 Summer Internship at the National Science and Technology Center for Disaster Reduction (NCDR). Focused on climate change impact assessment and adaptation strategies.",
+                    "zh": "參與 2023 年國家災害防救科技中心（NCDR）暑期實習，專注於氣候變遷影響評估與調適策略。"
+                },
+                "image": "assets/images/projects/ncdr/cover.jpg",
+                "tags": [
+                    "Internship",
+                    "Climate Change",
+                    "Risk Assessment"
+                ],
+                "links": {
+                    "report": "assets/documents/publications/ncdr-report.pdf"
+                }
+            }
         ]
     },
-"publications": {
-    "title": {
-        "en": "Research & Highlights",
-            "zh": "研究與成果"
-    },
-    "items": [
-        {
-            "id": "agu2025",
-            "type": {
-                "en": "Conference (Upcoming)",
-                "zh": "會議（即將發表）"
-            },
-            "title": {
-                "en": "Modeling Long-Term Household Flood Adaptation under Social Heterogeneity: A Coupled Agent-Based Modeling Framework",
-                "zh": "在社會異質性下的長期家庭洪水調適模型：耦合代理人基模型框架"
-            },
-            "authors": "Wenyu Chiou, Y. C. Ethan Yang, Tomohiro Tanaka, Sarawut Jamrussri, Shi Feng",
-            "venue": "AGU Fall Meeting 2025 (San Francisco/New Orleans)",
-            "description": {
-                "en": "Presented a coupled agent-based modeling framework to examine long-term household flood adaptation pathways under social heterogeneity.",
-                "zh": "發表耦合代理人基模型框架，探討社會異質性下的長期家庭洪水調適路徑。"
-            },
-            "highlight": true,
-            "links": {
-                "poster": "assets/documents/publications/agu2025-poster.pdf"
-            }
-        },
-        {
-            "id": "agu2023-sgd",
-            "type": {
-                "en": "Conference Abstract",
-                "zh": "會議摘要"
-            },
-            "title": {
-                "en": "Integrating Electrical Resistivity Tomography Techniques, Field Observations, and Numerical Simulations to Investigate Dynamics of Submarine Groundwater Discharge",
-                "zh": "整合電阻率層析成像技術、現地觀測與數值模擬以調查海底地下水排放動力學"
-            },
-            "authors": "M.H. Li, W. Chiou, C.C. Chen",
-            "venue": "AGU Fall Meeting 2023 (H53I-1455)",
-            "description": {
-                "en": "Investigated the spatiotemporal dynamics of SGD using coupled ERT and numerical modeling approaches.",
-                "zh": "使用耦合 ERT 與數值模擬方法調查 SGD 的時空動力學。"
-            },
-            "highlight": false,
-            "links": {}
-        },
-        {
-            "id": "thesis-2023",
-            "type": {
-                "en": "Master's Thesis",
-                "zh": "碩士論文"
-            },
-            "title": {
-                "en": "Study on the characteristics of submarine groundwater discharge in Taoyuan coastal zone",
-                "zh": "桃園海岸帶地下水出流特徵研究"
-            },
-            "authors": "Wenyu Chiou (Advisor: Ming-Hsu Li)",
-            "venue": "National Central University, 2023",
-            "description": {
-                "en": "Master's thesis characterizing the SGD processes in Taoyuan's coastal aquifer.",
-                "zh": "碩士論文，表徵桃園沿海含水層的 SGD 過程。"
-            },
-            "highlight": false,
-            "links": {
-                "pdf": "assets/documents/publications/thesis-2023.pdf"
-            }
-        },
-        {
-            "id": "jtae-2020",
-            "type": {
-                "en": "Journal Article",
-                "zh": "期刊論文"
-            },
-            "title": {
-                "en": "Seasonal differences in water and energy balance of evergreen broad-leaved forests in Central Taiwan",
-                "zh": "臺灣中部常綠闊葉林之水與能量收支季節性差異"
-            },
-            "authors": "Chiou, W., Lee, M.H., Chen, G.Y., Chen, P.Y.",
-            "venue": "Journal of Taiwan Agricultural Engineering, 66(2), 2020",
-            "description": {
-                "en": "Analyzed the seasonal variations in canopy water energy budgets in subtropical mountain forests.",
-                "zh": "分析亞熱帶山區森林冠層水能量收支的季節性變化。"
-            },
-            "highlight": false,
-            "links": {
-                "pdf": "assets/documents/publications/jtae-2020.pdf"
-            }
-        }
-    ]
-},
-"contact": {
-    "title": {
-        "en": "Get In Touch",
-            "zh": "聯絡方式"
-    },
-    "intro": {
-        "en": "I'm always open to discussing research opportunities, collaborations, or just connecting. Feel free to reach out!",
-            "zh": "我很樂意討論研究機會、合作或單純交流。歡迎隨時聯繫！"
-    },
-    "methods": [
-        {
-            "id": "email",
-            "label": {
-                "en": "Email",
-                "zh": "電子郵件"
-            },
-            "value": "wec325@lehigh.edu",
-            "link": "mailto:wec325@lehigh.edu",
-            "icon": "@"
-        },
-        {
-            "id": "github",
-            "label": {
-                "en": "GitHub",
-                "zh": "GitHub"
-            },
-            "value": "github.com/WenyuChiou",
-            "link": "https://github.com/WenyuChiou",
-            "icon": "GH"
-        },
-        {
-            "id": "linkedin",
-            "label": {
-                "en": "LinkedIn",
-                "zh": "LinkedIn"
-            },
-            "value": "linkedin.com/in/wenyu-chiou",
-            "link": "https://www.linkedin.com/in/wenyu-chiou",
-            "icon": "in"
-        },
-        {
-            "id": "scholar",
-            "label": {
-                "en": "Google Scholar",
-                "zh": "Google 學術"
-            },
-            "value": "View Profile",
-            "link": "https://scholar.google.com/yourprofile",
-            "icon": "GS"
-        }
-    ]
-},
-"footer": {
-    "copyright": {
-        "en": "© 2025 Wenyu Chiou. All rights reserved.",
-            "zh": "© 2025 邱文瑜。保留所有權利。"
-    },
-    "backToTop": {
-        "en": "Back to top ↑",
-            "zh": "返回頂部 ↑"
-    }
-},
-"navigation": {
-    "about": {
-        "en": "About",
-            "zh": "關於我"
-    },
-    "skills": {
-        "en": "Skills",
-            "zh": "技能"
-    },
-    "experience": {
-        "en": "Experience",
-            "zh": "經歷"
-    },
-    "projects": {
-        "en": "Projects",
-            "zh": "專案作品"
-    },
     "publications": {
-        "en": "Publications",
+        "title": {
+            "en": "Research & Highlights",
             "zh": "研究與成果"
+        },
+        "items": [
+            {
+                "id": "agu2025",
+                "type": {
+                    "en": "Conference (Upcoming)",
+                    "zh": "會議（即將發表）"
+                },
+                "title": {
+                    "en": "Modeling Long-Term Household Flood Adaptation under Social Heterogeneity: A Coupled Agent-Based Modeling Framework",
+                    "zh": "在社會異質性下的長期家庭洪水調適模型：耦合代理人基模型框架"
+                },
+                "authors": "Wenyu Chiou, Y. C. Ethan Yang, Tomohiro Tanaka, Sarawut Jamrussri, Shi Feng",
+                "venue": "AGU Fall Meeting 2025 (San Francisco/New Orleans)",
+                "description": {
+                    "en": "Presented a coupled agent-based modeling framework to examine long-term household flood adaptation pathways under social heterogeneity.",
+                    "zh": "發表耦合代理人基模型框架，探討社會異質性下的長期家庭洪水調適路徑。"
+                },
+                "highlight": true,
+                "links": {
+                    "poster": "assets/documents/publications/agu2025-poster.pdf"
+                }
+            },
+            {
+                "id": "agu2023-sgd",
+                "type": {
+                    "en": "Conference Abstract",
+                    "zh": "會議摘要"
+                },
+                "title": {
+                    "en": "Integrating Electrical Resistivity Tomography Techniques, Field Observations, and Numerical Simulations to Investigate Dynamics of Submarine Groundwater Discharge",
+                    "zh": "整合電阻率層析成像技術、現地觀測與數值模擬以調查海底地下水排放動力學"
+                },
+                "authors": "M.H. Li, W. Chiou, C.C. Chen",
+                "venue": "AGU Fall Meeting 2023 (H53I-1455)",
+                "description": {
+                    "en": "Investigated the spatiotemporal dynamics of SGD using coupled ERT and numerical modeling approaches.",
+                    "zh": "使用耦合 ERT 與數值模擬方法調查 SGD 的時空動力學。"
+                },
+                "highlight": false,
+                "links": {}
+            },
+            {
+                "id": "thesis-2023",
+                "type": {
+                    "en": "Master's Thesis",
+                    "zh": "碩士論文"
+                },
+                "title": {
+                    "en": "Study on the characteristics of submarine groundwater discharge in Taoyuan coastal zone",
+                    "zh": "桃園海岸帶地下水出流特徵研究"
+                },
+                "authors": "Wenyu Chiou (Advisor: Ming-Hsu Li)",
+                "venue": "National Central University, 2023",
+                "description": {
+                    "en": "Master's thesis characterizing the SGD processes in Taoyuan's coastal aquifer.",
+                    "zh": "碩士論文，表徵桃園沿海含水層的 SGD 過程。"
+                },
+                "highlight": false,
+                "links": {
+                    "pdf": "assets/documents/publications/thesis-2023.pdf"
+                }
+            },
+            {
+                "id": "jtae-2020",
+                "type": {
+                    "en": "Journal Article",
+                    "zh": "期刊論文"
+                },
+                "title": {
+                    "en": "Seasonal differences in water and energy balance of evergreen broad-leaved forests in Central Taiwan",
+                    "zh": "臺灣中部常綠闊葉林之水與能量收支季節性差異"
+                },
+                "authors": "Chiou, W., Lee, M.H., Chen, G.Y., Chen, P.Y.",
+                "venue": "Journal of Taiwan Agricultural Engineering, 66(2), 2020",
+                "description": {
+                    "en": "Analyzed the seasonal variations in canopy water energy budgets in subtropical mountain forests.",
+                    "zh": "分析亞熱帶山區森林冠層水能量收支的季節性變化。"
+                },
+                "highlight": false,
+                "links": {
+                    "pdf": "assets/documents/publications/jtae-2020.pdf"
+                }
+            }
+        ]
     },
     "contact": {
-        "en": "Contact",
+        "title": {
+            "en": "Get In Touch",
             "zh": "聯絡方式"
-    }
-},
-"ui": {
-    "showDetails": {
-        "en": "Show details",
+        },
+        "intro": {
+            "en": "I'm always open to discussing research opportunities, collaborations, or just connecting. Feel free to reach out!",
+            "zh": "我很樂意討論研究機會、合作或單純交流。歡迎隨時聯繫！"
+        },
+        "methods": [
+            {
+                "id": "email",
+                "label": {
+                    "en": "Email",
+                    "zh": "電子郵件"
+                },
+                "value": "wec325@lehigh.edu",
+                "link": "mailto:wec325@lehigh.edu",
+                "icon": "@"
+            },
+            {
+                "id": "github",
+                "label": {
+                    "en": "GitHub",
+                    "zh": "GitHub"
+                },
+                "value": "github.com/WenyuChiou",
+                "link": "https://github.com/WenyuChiou",
+                "icon": "GH"
+            },
+            {
+                "id": "linkedin",
+                "label": {
+                    "en": "LinkedIn",
+                    "zh": "LinkedIn"
+                },
+                "value": "linkedin.com/in/wenyu-chiou",
+                "link": "https://www.linkedin.com/in/wenyu-chiou",
+                "icon": "in"
+            },
+            {
+                "id": "scholar",
+                "label": {
+                    "en": "Google Scholar",
+                    "zh": "Google 學術"
+                },
+                "value": "View Profile",
+                "link": "https://scholar.google.com/yourprofile",
+                "icon": "GS"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": {
+            "en": "© 2025 Wenyu Chiou. All rights reserved.",
+            "zh": "© 2025 邱文瑜。保留所有權利。"
+        },
+        "backToTop": {
+            "en": "Back to top ↑",
+            "zh": "返回頂部 ↑"
+        }
+    },
+    "navigation": {
+        "about": {
+            "en": "About",
+            "zh": "關於我"
+        },
+        "skills": {
+            "en": "Skills",
+            "zh": "技能"
+        },
+        "experience": {
+            "en": "Experience",
+            "zh": "經歷"
+        },
+        "projects": {
+            "en": "Projects",
+            "zh": "專案作品"
+        },
+        "publications": {
+            "en": "Publications",
+            "zh": "研究與成果"
+        },
+        "contact": {
+            "en": "Contact",
+            "zh": "聯絡方式"
+        }
+    },
+    "ui": {
+        "showDetails": {
+            "en": "Show details",
             "zh": "顯示細節"
-    },
-    "hideDetails": {
-        "en": "Hide details",
+        },
+        "hideDetails": {
+            "en": "Hide details",
             "zh": "隱藏細節"
-    },
-    "downloadCV": {
-        "en": "Download CV",
+        },
+        "downloadCV": {
+            "en": "Download CV",
             "zh": "下載履歷"
-    },
-    "contactMe": {
-        "en": "Contact Me",
+        },
+        "contactMe": {
+            "en": "Contact Me",
             "zh": "聯絡我"
-    },
-    "moreDetails": {
-        "en": "More Details",
+        },
+        "moreDetails": {
+            "en": "More Details",
             "zh": "更多細節"
-    },
-    "github": {
-        "en": "GitHub",
+        },
+        "github": {
+            "en": "GitHub",
             "zh": "GitHub"
+        }
     }
-}
 };
