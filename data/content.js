@@ -351,7 +351,7 @@ window.contentData = {
                             "en": "Lehigh University, USA",
                             "zh": "里海大學，美國"
                         },
-                        "image": "assets/images/profile/lehigh.jpg",
+                        "image": "",
                         "date": {
                             "en": "Aug 2023 – Present",
                             "zh": "2023年8月 – 至今"
@@ -632,7 +632,7 @@ window.contentData = {
                     "en": "Conducted independent research as an undergraduate student, funded by the NSTC College Student Research Project grant. Focused on [Specific Topic/Methodology].",
                     "zh": "執行科技部大專學生研究計畫，進行獨立研究。專注於[具體題目/方法]。"
                 },
-                "image": "assets/images/projects/college/cover.jpg",
+                "image": "",
                 "tags": [
                     "NSTC Project",
                     "Undergraduate Research"
