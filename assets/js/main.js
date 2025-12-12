@@ -179,9 +179,8 @@ function renderExperience(lang) {
 
   const data = window.contentData.experience;
 
-  // Configuration for Rows (Parallel Grouping)
-  // flex: Relative width weight (e.g. 2 vs 1)
-  const rows = [
+  // Let's redefine rows correctly.
+  const finalRows = [
     {
       id: 'row_phd',
       items: [
@@ -189,49 +188,59 @@ function renderExperience(lang) {
       ]
     },
     {
+      // RA (Jan 2024 - Jun 2024) - Between PhD and MS
+      id: 'row_ra',
+      items: [
+        { id: 'ncu_ra', flex: 1, type: 'work', color: '#8b5cf6' }
+      ]
+    },
+    {
       id: 'row_ms',
       items: [
-        { id: 'ncu_ms', flex: 1.4, type: 'edu', color: '#10b981' }, // Main
-        { id: 'ncu_gra', flex: 1, type: 'work', color: '#06b6d4' }, // Parallel GRA
-        { id: 'ncdr_intern', flex: 0.8, type: 'intern', color: '#ef4444' } // Parallel Intern
+        { id: 'ncu_ms', flex: 1.4, type: 'edu', color: '#10b981' },
+        { id: 'ncu_gra', flex: 1, type: 'work', color: '#06b6d4' },
+        { id: 'ncdr_intern', flex: 0.8, type: 'intern', color: '#ef4444' }
       ]
     },
     {
       id: 'row_bs',
       items: [
-        { id: 'ncu_undergrad', flex: 1.4, type: 'edu', color: '#8b5cf6' }, // Main
-        { id: 'ies_intern', flex: 1, type: 'intern', color: '#f59e0b' } // Parallel Intern
+        { id: 'ncu_undergrad', flex: 1.4, type: 'edu', color: '#8b5cf6' },
+        { id: 'ies_intern', flex: 1, type: 'intern', color: '#f59e0b' }
       ]
     }
   ];
 
-  // Helper to get content, identifying and merging manual overrides if needed
+  // Helper to get content
   const getContent = (id, type) => {
-    // 1. Try to find in standard data
     let catId = type === 'edu' ? 'education' : 'professional';
-    // Fallback search in all categories just in case
     let cat = data.categories.find(c => c.items.some(i => i.id === id));
     let item = cat ? cat.items.find(i => i.id === id) : null;
 
-    // 2. Manual Data Injection for GRA if missing or to ensure specific text matches user request
+    // Manual Overrides
     if (id === 'ncu_ra') {
-      // Renaming/Ensuring Title if needed, but existing is likely "Research Assistant"
+      // Enforce Date
+      if (item) {
+        item = { ...item };
+        item.date = { en: 'Jan 2024 – Jun 2024', zh: '2024年1月 - 2024年6月' };
+        item.title = { en: 'Full-time Research Assistant', zh: '專任研究助理' }; // Distinguish from GRA
+      }
     }
-    if (id === 'ncu_gra' && !item) {
-      // Create if missing
-      item = {
-        id: 'ncu_gra',
-        title: { en: 'Graduate Research Assistant', zh: '兼任研究助理' },
-        institution: { en: 'National Central University', zh: '國立中央大學' },
-        date: { en: 'Sep 2021 – Jul 2023', zh: '2021年9月 - 2023年7月' }, // Explicit User Request
-        summary: { en: 'Research Assistant during Master\'s studies.', zh: '碩士期間擔任研究助理' },
-        bullets: { en: [], zh: [] }
-      };
-    } else if (id === 'ncu_gra' && item) {
-      // Override Title to match user request exactly if needed
-      item = { ...item }; // Copy
-      item.title = { en: 'Graduate Research Assistant', zh: '兼任研究助理' };
-      item.date = { en: 'Sep 2021 – Jul 2023', zh: '2021年9月 - 2023年7月' };
+    if (id === 'ncu_gra') {
+      if (!item) {
+        item = {
+          id: 'ncu_gra',
+          title: { en: 'Graduate Research Assistant', zh: '兼任研究助理' },
+          institution: { en: 'National Central University', zh: '國立中央大學' },
+          date: { en: 'Sep 2021 – Jul 2023', zh: '2021年9月 - 2023年7月' },
+          summary: { en: 'Research Assistant during Master\'s studies.', zh: '碩士期間擔任研究助理' },
+          bullets: { en: [], zh: [] }
+        };
+      } else {
+        item = { ...item };
+        item.title = { en: 'Graduate Research Assistant', zh: '兼任研究助理' };
+        item.date = { en: 'Sep 2021 – Jul 2023', zh: '2021年9月 - 2023年7月' };
+      }
     }
 
     return item;
@@ -239,7 +248,7 @@ function renderExperience(lang) {
 
   const html = `
     <div class="timeline" id="liquid-timeline">
-      ${rows.map(row => {
+      ${finalRows.map(row => {
     // Expand items with content
     const rowItems = row.items.map(conf => ({
       conf,
