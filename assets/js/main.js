@@ -503,3 +503,108 @@ function setupBackToTop() {
     });
   });
 }
+
+/**
+ * Project Drawer Functionality
+ * Handles bookmark tabs and off-canvas drawer panel
+ */
+function setupProjectDrawer() {
+  const drawer = document.getElementById('projectDrawer');
+  const backdrop = document.getElementById('drawerBackdrop');
+  const closeBtn = document.getElementById('drawerClose');
+  const drawerTitle = document.getElementById('drawerTitle');
+  const drawerContent = document.getElementById('drawerContent');
+  const bookmarkTabs = document.querySelectorAll('.bookmark-tab');
+
+  if (!drawer || !backdrop || !bookmarkTabs.length) return;
+
+  const data = window.contentData;
+  if (!data || !data.projects) return;
+
+  // Category titles
+  const categoryTitles = {
+    research: { en: 'Research Projects', zh: '研究專案' },
+    side: { en: 'Side Projects', zh: '副專案' }
+  };
+
+  // Open drawer
+  function openDrawer(category) {
+    const lang = currentLang;
+
+    // Set title
+    drawerTitle.textContent = categoryTitles[category]?.[lang] || 'Projects';
+
+    // Filter and render projects
+    const projects = data.projects.items.filter(p => p.category === category);
+    drawerContent.innerHTML = projects.map(project => `
+      <div class="drawer-project-card reveal">
+        ${project.image ? `
+          <div class="project-image">
+            <img src="${project.image}" alt="${project.name[lang]}" loading="lazy">
+          </div>
+        ` : ''}
+        <div class="project-info">
+          <h4 class="project-title">${project.name[lang]}</h4>
+          <p class="project-desc">${project.fullDescription?.[lang] || project.description[lang]}</p>
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+          </div>
+          <div class="project-links">
+            ${project.links?.github ? `<a href="${project.links.github}" target="_blank">🔗 GitHub</a>` : ''}
+            ${project.links?.demo ? `<a href="${project.links.demo}" target="_blank">🌐 Demo</a>` : ''}
+            ${project.links?.poster ? `<a href="${project.links.poster}" target="_blank">📄 Poster</a>` : ''}
+            ${project.links?.paper ? `<a href="${project.links.paper}" target="_blank">📑 Paper</a>` : ''}
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Activate drawer and backdrop
+    drawer.classList.add('active');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Mark active tab
+    bookmarkTabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.category === category);
+    });
+
+    // Trigger reveal animations
+    setTimeout(() => {
+      drawerContent.querySelectorAll('.reveal').forEach(card => {
+        card.classList.add('revealed');
+      });
+    }, 100);
+  }
+
+  // Close drawer
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    bookmarkTabs.forEach(tab => tab.classList.remove('active'));
+  }
+
+  // Event listeners
+  bookmarkTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      openDrawer(tab.dataset.category);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+}
+
+// Initialize drawer when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Give slight delay to ensure content.js is loaded
+  setTimeout(setupProjectDrawer, 100);
+});

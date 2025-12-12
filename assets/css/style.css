@@ -1578,3 +1578,235 @@
       background: var(--color-accent-hover);
       transform: translateY(-3px);
     }
+
+    /* ========== Sidebar Project Bookmark Tabs ========== */
+    .project-bookmarks {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .bookmark-tab {
+      background: var(--color-accent);
+      color: white;
+      padding: 1.2rem 0.6rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      cursor: pointer;
+      border-radius: 12px 0 0 12px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .bookmark-tab:hover {
+      background: var(--color-accent-hover);
+      padding-right: 1rem;
+      box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .bookmark-tab.active {
+      background: var(--color-primary);
+    }
+
+    /* ========== Off-Canvas Drawer Panel ========== */
+    .project-drawer {
+      position: fixed;
+      top: 0;
+      right: -70%;
+      width: 65%;
+      max-width: 900px;
+      height: 100vh;
+      background: var(--color-bg);
+      z-index: 1001;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-drawer.active {
+      right: 0;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      background: var(--color-bg);
+      z-index: 10;
+    }
+
+    .drawer-header h3 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: var(--color-primary);
+    }
+
+    .drawer-close {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--color-secondary);
+      transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .drawer-close:hover {
+      background: var(--color-bg-alt);
+      color: var(--color-accent);
+    }
+
+    .drawer-content {
+      padding: 2rem;
+    }
+
+    /* Drawer Backdrop */
+    .drawer-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .drawer-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ========== Drawer Project Cards (Horizontal Layout) ========== */
+    .drawer-project-card {
+      background: var(--color-bg-card);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+
+    .drawer-project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .drawer-project-card .project-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      overflow: hidden;
+      background: var(--color-bg-alt);
+    }
+
+    .drawer-project-card .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #f8f9fa;
+    }
+
+    .drawer-project-card .project-info {
+      padding: 1.5rem;
+    }
+
+    .drawer-project-card .project-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary);
+    }
+
+    .drawer-project-card .project-desc {
+      color: var(--color-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .drawer-project-card .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .drawer-project-card .project-tag {
+      background: var(--color-accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .drawer-project-card .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .drawer-project-card .project-links a {
+      color: var(--color-accent);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.2s ease;
+    }
+
+    .drawer-project-card .project-links a:hover {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
+    }
+
+    /* ========== Mobile Responsive Drawer ========== */
+    @media (max-width: 768px) {
+      .project-drawer {
+        width: 100%;
+        right: -100%;
+        max-width: none;
+      }
+
+      .project-bookmarks {
+        top: auto;
+        bottom: 10%;
+        transform: none;
+      }
+
+      .bookmark-tab {
+        padding: 0.8rem 0.4rem;
+        font-size: 0.75rem;
+        border-radius: 8px 0 0 8px;
+      }
+
+      .drawer-header {
+        padding: 1rem 1.5rem;
+      }
+
+      .drawer-content {
+        padding: 1rem;
+      }
+
+      .drawer-project-card .project-image {
+        max-height: 250px;
+      }
+    }
