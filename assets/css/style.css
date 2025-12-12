@@ -2605,3 +2605,87 @@
       font-weight: 500;
       margin-top: 0.5rem;
     }
+
+    /* ========== Nested Main Timeline Styles ========== */
+
+    /* Education Card with colored border */
+    .education-card {
+      background: var(--color-bg-card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .timeline-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-icon-badge {
+      font-size: 1.5rem;
+    }
+
+    /* Nested Work Container */
+    .nested-work-container {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--color-border);
+    }
+
+    .nested-work-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-secondary);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .nested-work-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid var(--color-accent);
+      transition: all 0.2s ease;
+    }
+
+    .nested-work-card:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateX(4px);
+    }
+
+    .nested-work-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .nested-work-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .nested-work-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .nested-work-date {
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .nested-work-institution {
+      font-size: 0.8rem;
+      color: var(--color-secondary);
+    }

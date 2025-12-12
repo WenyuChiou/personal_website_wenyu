@@ -165,7 +165,8 @@ function renderSkills(lang) {
  * Render Experience & Education
  */
 /**
- * Render Experience & Education as a Liquid Timeline
+ * Render Experience & Education as a Nested Timeline
+ * Education items are primary, with nested work/internships shown underneath
  */
 function renderExperience(lang) {
   const container = document.getElementById('experience-sections');
@@ -173,60 +174,96 @@ function renderExperience(lang) {
 
   const data = window.contentData.experience;
 
-  // 1. Merge Professional and Education items into a single array
+  // Get all items
   const profItems = data.categories.find(c => c.id === 'professional')?.items || [];
   const eduItems = data.categories.find(c => c.id === 'education')?.items || [];
 
-  // Add a 'type' flag to distinguishing visuals if needed, though uniform look is cleaner
-  const mergedItems = [
-    ...profItems.map(i => ({ ...i, type: 'work' })),
-    ...eduItems.map(i => ({ ...i, type: 'edu' }))
+  // Define the nested structure: Education with related work experiences
+  const nestedStructure = [
+    {
+      education: eduItems.find(e => e.id === 'lehigh_phd'),
+      relatedWork: [profItems.find(p => p.id === 'ncu_ra')].filter(Boolean),
+      icon: '🎓',
+      color: '#3b82f6'
+    },
+    {
+      education: eduItems.find(e => e.id === 'ncu_ms'),
+      relatedWork: [
+        profItems.find(p => p.id === 'ncu_gra'),
+        profItems.find(p => p.id === 'ncdr_intern')
+      ].filter(Boolean),
+      icon: '🎓',
+      color: '#10b981'
+    },
+    {
+      education: eduItems.find(e => e.id === 'ncu_undergrad'),
+      relatedWork: [profItems.find(p => p.id === 'ies_intern')].filter(Boolean),
+      icon: '🎓',
+      color: '#8b5cf6'
+    }
   ];
 
-  // 2. Sort by date (Newest First) - Simplistic parsing assumes year is relevant
-  // For now, we manually ordered them in JSON or trust the merged order. 
-  // Let's rely on manual ordering in JSON or simple interleaving if dates overlap.
-  // A simple re-sort based on first 4 digits of date string:
-  const getYear = (str) => parseInt(str.match(/\d{4}/)?.[0] || 0);
-  mergedItems.sort((a, b) => getYear(b.date.en) - getYear(a.date.en));
-
-
-  // 3. Render
+  // Render nested timeline
   const html = `
-    <div class="timeline" id="liquid-timeline">
+    <div class="timeline nested-main-timeline" id="liquid-timeline">
       <div class="timeline-progress" id="timeline-progress"></div>
-      ${mergedItems.map((item, index) => `
-        <div class="timeline-item reveal-on-scroll">
-          <div class="timeline-dot"></div>
+      ${nestedStructure.map((group, index) => {
+    if (!group.education) return '';
+    const edu = group.education;
+
+    return `
+        <div class="timeline-item timeline-education-group reveal-on-scroll">
+          <div class="timeline-dot" style="background: ${group.color};"></div>
           <div class="timeline-content">
-            <!-- Large Image Area -->
-            ${item.image ? `
-            <div class="timeline-img">
-               <img src="${item.image}" alt="${item.title[lang]}">
-            </div>
-            ` : ''}
-            
-            <div class="timeline-info">
-              <span class="timeline-date">${item.date[lang]}</span>
-              <h3 class="timeline-title">${item.title[lang]}</h3>
-              <div class="timeline-institution">${item.institution[lang]}</div>
-              
-              <div class="timeline-desc">
-                 ${item.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${item.summary[lang]}</p>` : ''}
-                 <ul>
-                    ${item.bullets[lang].slice(0, 3).map(b => `<li>${b}</li>`).join('')}
-                 </ul>
+            <!-- Education Main Card -->
+            <div class="timeline-card education-card" style="border-left: 4px solid ${group.color};">
+              <div class="timeline-header">
+                <span class="timeline-icon-badge">${group.icon}</span>
+                <span class="timeline-date">${edu.date[lang]}</span>
+              </div>
+              ${edu.image ? `
+              <div class="timeline-img">
+                 <img src="${edu.image}" alt="${edu.title[lang]}">
+              </div>
+              ` : ''}
+              <div class="timeline-info">
+                <h3 class="timeline-title">${edu.title[lang]}</h3>
+                <div class="timeline-institution">${edu.institution[lang]}</div>
+                <div class="timeline-desc">
+                   ${edu.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${edu.summary[lang]}</p>` : ''}
+                   <ul>
+                      ${edu.bullets[lang].slice(0, 3).map(b => `<li>${b}</li>`).join('')}
+                   </ul>
+                </div>
               </div>
             </div>
+
+            <!-- Nested Work/Internships during this education -->
+            ${group.relatedWork.length > 0 ? `
+            <div class="nested-work-container">
+              <div class="nested-work-label">During this period:</div>
+              ${group.relatedWork.map(work => `
+              <div class="nested-work-card">
+                <span class="nested-work-icon">${work.id?.includes('intern') ? '🏢' : '💼'}</span>
+                <div class="nested-work-info">
+                  <div class="nested-work-title">${work.title[lang]}</div>
+                  <div class="nested-work-date">${work.date[lang]}</div>
+                  <div class="nested-work-institution">${work.institution[lang]}</div>
+                </div>
+              </div>
+              `).join('')}
+            </div>
+            ` : ''}
           </div>
         </div>
-      `).join('')}
+      `;
+  }).join('')}
     </div>
   `;
 
   container.innerHTML = html;
 
-  // 4. Initialize Liquid Scroll Effect
+  // Initialize Liquid Scroll Effect
   initLiquidScroll();
 }
 
