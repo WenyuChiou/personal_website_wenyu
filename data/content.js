@@ -37,14 +37,10 @@ window.contentData = {
         },
         "paragraphs": {
             "en": [
-                "I study **how individuals and communities make decisions under risk and uncertainty** — particularly in the context of natural hazards like floods.",
-                "My research uses **Agent-Based Modeling (ABM)** to simulate the dynamic interactions between human behavior, identity, and the built/natural environment. I integrate behavioral theories (PMT, PADM), flood insurance mechanisms, and survey-based social science to understand adaptation pathways.",
-                "**Personal Interests:** Outside of academia, I'm fascinated by **quantitative trading** and **strategy development**. I enjoy applying computational thinking to financial markets and experimenting with LLM-based decision systems."
+                "I study **how individuals and communities make decisions under risk and uncertainty** — particularly in the context of natural hazards like floods. My research uses **Agent-Based Modeling (ABM)** to simulate interactions between human behavior, identity, and the environment."
             ],
             "zh": [
-                "我研究 **個人與社區在風險與不確定性下如何做決策**——特別是在洪水等自然災害的情境下。",
-                "我的研究使用 **代理人基模型 (ABM)** 來模擬人類行為、身分認同與建成/自然環境之間的動態互動。我整合行為理論 (PMT, PADM)、洪水保險機制與問卷社會科學來理解調適路徑。",
-                "**個人興趣：** 在學術之外，我對 **量化交易** 與 **策略開發** 很有興趣。我喜歡把計算思維應用到金融市場，並嘗試 LLM 決策系統的實驗。"
+                "我研究 **個人與社區在風險與不確定性下如何做決策**——特別是在洪水等自然災害的情境下。我的研究使用 **代理人基模型 (ABM)** 來模擬人類行為、身分認同與環境之間的互動。"
             ]
         },
         "infoCards": {

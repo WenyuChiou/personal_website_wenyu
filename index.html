@@ -101,29 +101,65 @@
       </div>
     </section>
 
-    <!-- ========== About Section ========== -->
-    <!-- CUSTOMIZE: Personal introduction and info cards -->
-    <section id="about" class="section about">
+    <!-- ========== Profile Section (About + Skills) ========== -->
+    <section id="profile" class="section profile">
       <div class="container">
         <h2 class="section-title" data-i18n="about_title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text" id="about-text">
-            <!-- Dynamic Content -->
-          </div>
-          <div class="info-cards" id="info-cards">
+
+        <!-- Intro Text -->
+        <div class="profile-intro"
+          style="max-width: 800px; margin: 0 auto 3rem; text-align: center; color: var(--color-secondary); line-height: 1.8;">
+          <div id="about-text">
             <!-- Dynamic Content -->
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ========== Skills Section ========== -->
-    <!-- CUSTOMIZE: Add/edit skill categories and items -->
-    <section id="skills" class="section skills">
-      <div class="container">
-        <h2 class="section-title" data-i18n="skills_title">Skills & Expertise</h2>
-        <div class="skills-grid" id="skills-grid">
-          <!-- Dynamic Content -->
+        <!-- 3-Column Highlights Grid -->
+        <div class="profile-highlights"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+          <!-- Card 1: Research Focus -->
+          <div class="highlight-card"
+            style="background: var(--color-bg-card); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-accent);">
+            <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Research Focus</h3>
+            <ul style="list-style: none; padding: 0; color: var(--color-secondary); line-height: 1.6;">
+              <li style="margin-bottom: 0.5rem;">• Agent-Based Modeling (ABM)</li>
+              <li style="margin-bottom: 0.5rem;">• Structural Equation Modeling (SEM)</li>
+              <li style="margin-bottom: 0.5rem;">• Groundwater Modeling</li>
+              <li style="margin-bottom: 0.5rem;">• Climate Change Adaptation</li>
+              <li style="margin-bottom: 0.5rem;">• Household Flood Risk Decisions</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Methodologies & Tools -->
+          <div class="highlight-card"
+            style="background: var(--color-bg-card); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-secondary);">
+            <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Tools & Methods</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">NetLogo</span>
+              <span class="tag">ArcGIS</span>
+              <span class="tag">Bayesian Statistics</span>
+              <span class="tag">Survey Design</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Interests & Side Projects -->
+          <div class="highlight-card"
+            style="background: var(--color-bg-card); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border-top: 4px solid #64748b;">
+            <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Interests</h3>
+            <p style="color: var(--color-secondary); margin-bottom: 1rem;">
+              Passionate about applying quantitative methods to financial markets and AI systems.
+            </p>
+            <ul style="list-style: none; padding: 0; color: var(--color-secondary);">
+              <li style="margin-bottom: 0.5rem;">• Quantitative Trading</li>
+              <li style="margin-bottom: 0.5rem;">• AI/LLM Agent Systems</li>
+              <li style="margin-bottom: 0.5rem;">• Strategy Development</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>

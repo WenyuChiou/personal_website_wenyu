@@ -137,24 +137,9 @@ function renderAbout(lang) {
     .map(p => `<p>${p}</p>`)
     .join('');
 
-  // Info Cards
-  const cardsContainer = document.getElementById('info-cards');
-  if (!cardsContainer) return;
-
-  // Convert infoCards object to array for easier mapping
-  const infoCards = [
-    data.infoCards.location,
-    data.infoCards.fields,
-    data.infoCards.status,
-    data.infoCards.languages
-  ];
-
-  cardsContainer.innerHTML = infoCards.map(info => `
-    <div class="info-card">
-      <h4>${info.label[lang]}</h4>
-      <p>${info.value[lang] || info.value}</p>
-    </div>
-  `).join('');
+  // Info Cards (Deprecated - logic moved to static profile structure)
+  // const cardsContainer = document.getElementById('info-cards');
+  // ... removed legacy dynamic rendering
 }
 
 /**
