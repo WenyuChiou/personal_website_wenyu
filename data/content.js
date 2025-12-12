@@ -470,15 +470,15 @@ window.contentData = {
                     "zh": "結合地電阻探測技術、現地觀測與數值模擬探討台灣桃園台地海底地下水排放動態"
                 },
                 "description": {
-                    "en": "Poster presenting findings on how social identity influences flood risk perception and insurance uptake.",
-                    "zh": "展示社會認同如何影響洪水風險感知與保險購買意願的研究海報。"
+                    "en": "Integrated electrical resistivity tomography (ERT), field observations, and numerical simulations to investigate submarine groundwater discharge dynamics in Taoyuan coastal area.",
+                    "zh": "整合電阻率層析成像技術、現場觀測與數值模擬，探討桃園海岸地區的海底地下水排放動力學。"
                 },
                 "fullDescription": {
-                    "en": "AGU 2023 poster detailing the survey results and ABM simulations regarding social identity's role in risk perception.",
-                    "zh": "AGU 2023 海報，詳細說明關於社會認同在風險感知中角色的問卷結果與 ABM 模擬。"
+                    "en": "AGU 2023 poster presenting integrated research combining electrical resistivity tomography (ERT) techniques, field observations, and THMC3D numerical simulations to characterize the spatiotemporal dynamics of submarine groundwater discharge (SGD) in the Taoyuan coastal tableland.",
+                    "zh": "AGU 2023 海報，呈現整合電阻率層析成像 (ERT) 技術、現場觀測與 THMC3D 數值模擬的研究，特徵化桃園海岸台地海底地下水排放 (SGD) 的時空動力學。"
                 },
-                "image": "assets/images/projects/agu2023/poster.jpg",
-                "tags": ["AGU 2023", "Risk Perception", "Poster"],
+                "image": "assets/images/projects/groundwater/cover.jpg",
+                "tags": ["AGU 2023", "ERT", "SGD", "Poster"],
                 "links": { "poster": "#" }
             },
             {
