@@ -339,15 +339,7 @@
       overflow: hidden;
     }
 
-    .hero-avatar::before {
-      content: '';
-      position: absolute;
-      width: 80%;
-      height: 80%;
-      background: white;
-      border-radius: 50%;
-      bottom: 0;
-    }
+
 
 
 

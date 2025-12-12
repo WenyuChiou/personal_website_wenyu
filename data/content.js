@@ -13,8 +13,8 @@ window.contentData = {
             "zh": "里海大學 | 巨災模型與韌性中心"
         },
         "description": {
-            "en": "I work across hydrology, flood risk adaptation, and data-driven modeling, focusing on climate resilience and disaster risk analytics.",
-            "zh": "我的研究橫跨水文學、洪水風險調適與資料驅動的模型，專注於氣候韌性與災害風險分析。"
+            "en": "Specializing in Quantitative Trading, Strategy Development, and LLM Applications. Background in Catastrophe Modeling and Risk Resilience.",
+            "zh": "專注於量化交易、策略開發與 LLM 應用。具備巨災模型與風險韌性分析背景。"
         },
         "avatar": "assets/images/profile/avatar.jpg",
         "cv": {
@@ -36,16 +36,8 @@ window.contentData = {
             "zh": "關於我"
         },
         "paragraphs": {
-            "en": [
-                "I hold a Master's degree in Hydrological and Oceanic Sciences from National Central University, where I specialized in groundwater dynamics, submarine groundwater discharge, and coastal aquifer systems. My research integrated field observations with advanced numerical modeling to understand water-soil interactions in complex environments.",
-                "Currently, I am expanding my focus to flood risk adaptation and behavioral modeling. I develop agent-based models that simulate household decision-making under climate hazards, incorporating cognitive frameworks (PMT, PADM) and social heterogeneity. My work bridges hydrology, risk analytics, and computational social science, with applications in resilience planning and disaster risk reduction.",
-                "I am passionate about leveraging data science, numerical modeling, and emerging AI technologies to tackle complex environmental and societal challenges. I am actively seeking PhD opportunities and research positions in climate adaptation, disaster risk analytics, and computational modeling."
-            ],
-            "zh": [
-                "我擁有國立中央大學水文與海洋科學研究所碩士學位，專攻地下水動力學、海底地下水排放與沿海含水層系統。我的研究結合現地觀測與先進的數值模擬，深入了解複雜環境中的水土交互作用。",
-                "目前，我正在擴展研究領域至洪水風險調適與行為模型。我開發代理人基模型來模擬家庭在氣候災害下的決策過程，整合認知框架（PMT、PADM）與社會異質性。我的研究連結水文學、風險分析與計算社會科學，應用於韌性規劃與災害風險減緩。",
-                "我熱衷於運用資料科學、數值模擬與新興的 AI 技術來解決複雜的環境與社會挑戰。目前正積極尋求氣候調適、災害風險分析與計算模型相關的博士與研究職位。"
-            ]
+            "en": [],
+            "zh": []
         },
         "infoCards": {
             "location": {
@@ -54,8 +46,8 @@ window.contentData = {
                     "zh": "所在地"
                 },
                 "value": {
-                    "en": "New Taipei City, Taiwan",
-                    "zh": "新北市，台灣"
+                    "en": "Bethlehem, PA, USA",
+                    "zh": "伯利恆，賓州，美國"
                 }
             },
             "fields": {
@@ -111,12 +103,13 @@ window.contentData = {
                     "zh": "擅長耦合系統模型與行為決策框架（PMT、PADM）。"
                 },
                 "items": [
+                    "Catastrophe Modeling",
                     "Agent-Based Modeling",
                     "Numerical Modeling",
                     "Hydrology & Groundwater",
                     "Risk & Resilience Analysis",
                     "Climate Adaptation",
-                    "Monte Carlo Simulation"
+                    "Bayesian Inference"
                 ]
             },
             {
@@ -135,11 +128,11 @@ window.contentData = {
                 },
                 "items": [
                     "Python (NumPy, Pandas, Matplotlib)",
+                    "Matlab",
+                    "R (Tidyverse)",
                     "GIS (QGIS, ArcGIS)",
-                    "SQL & Data Management",
                     "Git & Version Control",
-                    "Jupyter Notebooks",
-                    "LaTeX"
+                    "Jupyter Notebooks"
                 ]
             },
             {
@@ -454,7 +447,7 @@ window.contentData = {
                     "Python",
                     "LLM Agents",
                     "RAG",
-                    "Clean Architecture"
+                    "MCP"
                 ],
                 "links": {
                     "github": "https://github.com/WenyuChiou/ai-trader-ollama",
@@ -509,7 +502,7 @@ window.contentData = {
                     "LLM Agents"
                 ],
                 "links": {
-                    "github": "",
+                    "github": "https://github.com/WenyuChiou/FLOODABM",
                     "demo": "",
                     "paper": "",
                     "report": "assets/documents/publications/ncdr-report.pdf"
