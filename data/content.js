@@ -13,8 +13,8 @@ window.contentData = {
             "zh": "里海大學 | 巨災模型與韌性中心"
         },
         "description": {
-            "en": "Where Water Meets Wall Street — I model disasters, decode markets, and teach AI to think like humans.",
-            "zh": "當水文遇上華爾街 — 我模擬災害、解構市場，並讓 AI 學會像人類一樣思考。"
+            "en": "Modeling how people decide under risk — from flood insurance choices to community resilience.",
+            "zh": "模擬人們在風險下的決策過程——從洪水保險選擇到社區韌性。"
         },
         "avatar": "assets/images/profile/avatar.jpg",
         "cv": {
@@ -37,16 +37,14 @@ window.contentData = {
         },
         "paragraphs": {
             "en": [
-                "I'm not your typical researcher. I see patterns where others see chaos — whether it's predicting how a community responds to a flood or finding alpha in the turbulence of financial markets.",
-                "**By Day:** I build Agent-Based Models that simulate thousands of households making life-altering decisions under disaster stress. I integrate flood insurance economics, behavioral psychology (PMT/PADM), and survey-driven social science into simulations that policy-makers can actually use.",
-                "**By Night:** I'm a quant enthusiast who treats trading like a physics problem. I've built multi-agent LLM trading systems, applied the 'Hydraulic Jump' concept from fluid dynamics to detect market reversals, and I'm constantly exploring how AI can make smarter decisions than humans.",
-                "**My Superpower?** Connecting dots across disciplines that rarely talk to each other — hydrology, catastrophe modeling, behavioral science, quantitative finance, and cutting-edge AI. I thrive at the intersections."
+                "I study **how individuals and communities make decisions under risk and uncertainty** — particularly in the context of natural hazards like floods.",
+                "My research uses **Agent-Based Modeling (ABM)** to simulate the dynamic interactions between human behavior, identity, and the built/natural environment. I integrate behavioral theories (PMT, PADM), flood insurance mechanisms, and survey-based social science to understand adaptation pathways.",
+                "**Personal Interests:** Outside of academia, I'm fascinated by **quantitative trading** and **strategy development**. I enjoy applying computational thinking to financial markets and experimenting with LLM-based decision systems."
             ],
             "zh": [
-                "我不是典型的研究者。我在混沌中看見模式——無論是預測社區如何應對洪災，還是在金融市場的波動中發現 Alpha。",
-                "**白天：** 我建構代理人基模型，模擬數千戶家庭在災害壓力下做出改變人生的決策。我將洪水保險經濟學、行為心理學 (PMT/PADM) 和問卷社會科學整合進可供決策者實際使用的模擬系統。",
-                "**夜晚：** 我是個量化交易愛好者，把交易當作物理問題來解。我建過多代理人 LLM 交易系統、把流體力學的「水躍」概念應用到偵測市場反轉，並持續探索 AI 如何做出比人類更聰明的決策。",
-                "**我的超能力？** 連結那些很少對話的領域——水文學、巨災模型、行為科學、量化金融與前沿 AI。我在交叉點上茁壯成長。"
+                "我研究 **個人與社區在風險與不確定性下如何做決策**——特別是在洪水等自然災害的情境下。",
+                "我的研究使用 **代理人基模型 (ABM)** 來模擬人類行為、身分認同與建成/自然環境之間的動態互動。我整合行為理論 (PMT, PADM)、洪水保險機制與問卷社會科學來理解調適路徑。",
+                "**個人興趣：** 在學術之外，我對 **量化交易** 與 **策略開發** 很有興趣。我喜歡把計算思維應用到金融市場，並嘗試 LLM 決策系統的實驗。"
             ]
         },
         "infoCards": {
