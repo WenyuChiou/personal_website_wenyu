@@ -2606,86 +2606,202 @@
       margin-top: 0.5rem;
     }
 
-    /* ========== Nested Main Timeline Styles ========== */
 
-    /* Education Card with colored border */
-    .education-card {
+    /* ========== Gantt Chart Timeline Styles ========== */
+
+    .gantt-container {
+      text-align: left;
+      margin-top: 1.5rem;
       background: var(--color-bg-card);
-      border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--color-border);
     }
 
-    .timeline-header {
+    .gantt-scroll-wrapper {
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .gantt-chart {
+      min-width: 700px;
+      position: relative;
+    }
+
+    /* Header: Years */
+    .gantt-header {
+      display: flex;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .gantt-row-label-placeholder {
+      width: 140px;
+      /* Width for row labels */
+      flex-shrink: 0;
+      border-right: 1px solid var(--color-border);
+    }
+
+    .gantt-timeline-ticks {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 10px;
+      /* Offset tick center */
+      position: relative;
+    }
+
+    .gantt-tick {
+      flex: 1;
+      text-align: left;
+      /* Start aligned for year bars */
+      font-size: 0.8rem;
+      color: var(--color-secondary);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .gantt-tick span {
+      display: block;
+      transform: translateX(-50%);
+    }
+
+    .gantt-tick::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 6px;
+      width: 1px;
+      background: var(--color-border);
+    }
+
+    /* Body: Rows */
+    .gantt-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .gantt-row {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      /* Center labels vertically */
+      position: relative;
     }
 
-    .timeline-icon-badge {
-      font-size: 1.5rem;
+    .gantt-row-label {
+      width: 140px;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      text-align: right;
+      padding-right: 1.25rem;
+      border-right: 1px solid var(--color-border);
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
 
-    /* Nested Work Container */
-    .nested-work-container {
+    .gantt-row-track {
+      flex: 1;
+      position: relative;
+      height: 48px;
+      /* Height for bars */
+      margin-left: 10px;
+      /* Align with ticks */
+    }
+
+    /* Grid Lines */
+    .gantt-grid-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      pointer-events: none;
+      z-index: 0;
+      justify-content: space-between;
+      /* Match ticks alignment */
+    }
+
+    .gantt-grid-line {
+      flex: 1;
+      border-left: 1px dashed rgba(200, 200, 200, 0.2);
+      height: 100%;
+    }
+
+    .gantt-grid-line:last-child {
+      border-right: 1px dashed rgba(200, 200, 200, 0.2);
+    }
+
+    /* Bars */
+    .gantt-bar-item {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 36px;
+      border-radius: 6px;
+      color: white;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .gantt-bar-item:hover {
+      transform: translateY(-53%) scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      z-index: 2;
+    }
+
+    .gantt-bar-content {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gantt-bar-icon {
+      font-size: 1rem;
+    }
+
+    .gantt-bar-text {
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Legend */
+    .gantt-legend {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
       margin-top: 1.5rem;
       padding-top: 1rem;
-      border-top: 1px dashed var(--color-border);
+      border-top: 1px solid var(--color-border);
     }
 
-    .nested-work-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-secondary);
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-
-    .nested-work-card {
+    .legend-item {
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.75rem 1rem;
-      background: rgba(59, 130, 246, 0.05);
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      border-left: 3px solid var(--color-accent);
-      transition: all 0.2s ease;
-    }
-
-    .nested-work-card:hover {
-      background: rgba(59, 130, 246, 0.1);
-      transform: translateX(4px);
-    }
-
-    .nested-work-icon {
-      font-size: 1.25rem;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .nested-work-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .nested-work-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .nested-work-date {
-      font-size: 0.8rem;
-      color: var(--color-accent);
-      font-weight: 500;
-      margin-bottom: 0.1rem;
-    }
-
-    .nested-work-institution {
+      align-items: center;
+      gap: 0.5rem;
       font-size: 0.8rem;
       color: var(--color-secondary);
+    }
+
+    .legend-item .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }

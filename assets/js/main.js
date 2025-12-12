@@ -165,106 +165,110 @@ function renderSkills(lang) {
  * Render Experience & Education
  */
 /**
- * Render Experience & Education as a Nested Timeline
- * Education items are primary, with nested work/internships shown underneath
+ * Render Experience & Education as a Gantt Chart Timeline
+ * Horizontal bars showing time spans with overlapping activities
  */
 function renderExperience(lang) {
   const container = document.getElementById('experience-sections');
   if (!container) return;
 
-  const data = window.contentData.experience;
+  // Define timeline data with start/end years and category manually for precise control
+  const timelineData = [
+    // Education (Top Row)
+    { id: 'lehigh_phd', label: { en: 'Lehigh PhD', zh: '理海大學 博士' }, start: 2024.6, end: 2025.5, row: 0, type: 'edu', color: '#3b82f6', subtitle: { en: 'Civil & Env. Eng.', zh: '土木環工' } },
+    { id: 'ncu_ms', label: { en: 'NCU M.S.', zh: '中央大學 碩士' }, start: 2021.7, end: 2023.6, row: 0, type: 'edu', color: '#10b981', subtitle: { en: 'Hydrology', zh: '水文科學' } },
+    { id: 'ncu_undergrad', label: { en: 'NCU B.S.', zh: '中央大學 學士' }, start: 2017.7, end: 2021.6, row: 0, type: 'edu', color: '#8b5cf6', subtitle: { en: 'Earth Sciences', zh: '地球科學' } },
 
-  // Get all items
-  const profItems = data.categories.find(c => c.id === 'professional')?.items || [];
-  const eduItems = data.categories.find(c => c.id === 'education')?.items || [];
-
-  // Define the nested structure: Education with related work experiences
-  const nestedStructure = [
-    {
-      education: eduItems.find(e => e.id === 'lehigh_phd'),
-      relatedWork: [profItems.find(p => p.id === 'ncu_ra')].filter(Boolean),
-      icon: '🎓',
-      color: '#3b82f6'
-    },
-    {
-      education: eduItems.find(e => e.id === 'ncu_ms'),
-      relatedWork: [
-        profItems.find(p => p.id === 'ncu_gra'),
-        profItems.find(p => p.id === 'ncdr_intern')
-      ].filter(Boolean),
-      icon: '🎓',
-      color: '#10b981'
-    },
-    {
-      education: eduItems.find(e => e.id === 'ncu_undergrad'),
-      relatedWork: [profItems.find(p => p.id === 'ies_intern')].filter(Boolean),
-      icon: '🎓',
-      color: '#8b5cf6'
-    }
+    // Work / Internships (Bottom Rows)
+    { id: 'ncu_ra', label: { en: 'NCU RA', zh: '專任研究助理' }, start: 2024.0, end: 2024.5, row: 1, type: 'work', color: '#6366f1' },
+    { id: 'ncdr_intern', label: { en: 'NCDR Intern', zh: '災防中心實習' }, start: 2022.5, end: 2022.7, row: 1, type: 'intern', color: '#ef4444' }, /* Summer 2022 overlap */
+    { id: 'ncu_gra', label: { en: 'NCU GRA', zh: '兼任研究助理' }, start: 2021.7, end: 2023.6, row: 2, type: 'work', color: '#06b6d4' }, /* Concurrent with MS */
+    { id: 'ies_intern', label: { en: 'IES Intern', zh: '中研院實習' }, start: 2020.5, end: 2020.7, row: 1, type: 'intern', color: '#f59e0b' } /* Summer 2020 overlap */
   ];
 
-  // Render nested timeline
+  const startYear = 2017;
+  const endYear = 2025; // Viewing window
+  const totalYears = endYear - startYear + 1; // +1 to include endYear fully if needed, or just range
+
+  // Generate ticks
+  const years = [];
+  for (let y = startYear; y <= endYear; y++) {
+    years.push(y);
+  }
+
+  const rowLabels = [
+    { en: 'Education', zh: '學歷' },
+    { en: 'Experience', zh: '經歷' },
+    { en: '', zh: '' } // Extra row for GRA concurrent
+  ];
+
   const html = `
-    <div class="timeline nested-main-timeline" id="liquid-timeline">
-      <div class="timeline-progress" id="timeline-progress"></div>
-      ${nestedStructure.map((group, index) => {
-    if (!group.education) return '';
-    const edu = group.education;
+    <div class="gantt-container" id="gantt-chart">
+      <div class="gantt-scroll-wrapper">
+        <div class="gantt-chart">
+          <!-- Header (Years) -->
+          <div class="gantt-header">
+            <div class="gantt-row-label-placeholder"></div>
+            <div class="gantt-timeline-ticks">
+              ${years.map(y => `<div class="gantt-tick"><span>${y}</span></div>`).join('')}
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="gantt-body">
+            ${[0, 1, 2].map(rowIndex => `
+              <div class="gantt-row">
+                <div class="gantt-row-label">${rowLabels[rowIndex][lang]}</div>
+                <div class="gantt-row-track">
+                  <!-- Vertical Grid Lines -->
+                  <div class="gantt-grid-lines">
+                     ${years.map(() => `<div class="gantt-grid-line"></div>`).join('')}
+                  </div>
+
+                  <!-- Bars -->
+                  ${timelineData.filter(item => item.row === rowIndex).map(item => {
+    const duration = item.end - item.start;
+    const left = ((item.start - startYear) / (endYear - startYear + 1)) * 100;
+    const width = (duration / (endYear - startYear + 1)) * 100;
+
+    // Min width handling for short internships so text fits or icon shows
+    const safeWidth = Math.max(width, 4);
 
     return `
-        <div class="timeline-item timeline-education-group reveal-on-scroll">
-          <div class="timeline-dot" style="background: ${group.color};"></div>
-          <div class="timeline-content">
-            <!-- Education Main Card -->
-            <div class="timeline-card education-card" style="border-left: 4px solid ${group.color};">
-              <div class="timeline-header">
-                <span class="timeline-icon-badge">${group.icon}</span>
-                <span class="timeline-date">${edu.date[lang]}</span>
-              </div>
-              ${edu.image ? `
-              <div class="timeline-img">
-                 <img src="${edu.image}" alt="${edu.title[lang]}">
-              </div>
-              ` : ''}
-              <div class="timeline-info">
-                <h3 class="timeline-title">${edu.title[lang]}</h3>
-                <div class="timeline-institution">${edu.institution[lang]}</div>
-                <div class="timeline-desc">
-                   ${edu.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${edu.summary[lang]}</p>` : ''}
-                   <ul>
-                      ${edu.bullets[lang].slice(0, 3).map(b => `<li>${b}</li>`).join('')}
-                   </ul>
+                      <div class="gantt-bar-item tooltip-trigger" 
+                           style="left: ${left}%; width: ${safeWidth}%; background-color: ${item.color};"
+                           data-id="${item.id}">
+                        <div class="gantt-bar-content">
+                          <span class="gantt-bar-icon">${item.type === 'edu' ? '🎓' : item.type === 'intern' ? '🏢' : '💼'}</span>
+                          <span class="gantt-bar-text">${item.label[lang]}</span>
+                        </div>
+                        <!-- Simple hover tooltip now, sophisticated content later -->
+                      </div>
+                    `;
+  }).join('')}
                 </div>
               </div>
-            </div>
-
-            <!-- Nested Work/Internships during this education -->
-            ${group.relatedWork.length > 0 ? `
-            <div class="nested-work-container">
-              <div class="nested-work-label">During this period:</div>
-              ${group.relatedWork.map(work => `
-              <div class="nested-work-card">
-                <span class="nested-work-icon">${work.id?.includes('intern') ? '🏢' : '💼'}</span>
-                <div class="nested-work-info">
-                  <div class="nested-work-title">${work.title[lang]}</div>
-                  <div class="nested-work-date">${work.date[lang]}</div>
-                  <div class="nested-work-institution">${work.institution[lang]}</div>
-                </div>
-              </div>
-              `).join('')}
-            </div>
-            ` : ''}
+            `).join('')}
           </div>
         </div>
-      `;
-  }).join('')}
+      </div>
+      
+      <!-- Legend -->
+      <div class="gantt-legend">
+        <div class="legend-item"><span class="dot" style="background:#3b82f6"></span> Education</div>
+        <div class="legend-item"><span class="dot" style="background:#06b6d4"></span> Work</div>
+        <div class="legend-item"><span class="dot" style="background:#f59e0b"></span> Internship</div>
+      </div>
+
+      <!-- Detail Panel Placeholder if needed, or reuse sidebar? 
+           For now, let's keep interactions simple: Hover to see full title/dates. 
+      -->
     </div>
   `;
 
   container.innerHTML = html;
 
-  // Initialize Liquid Scroll Effect
-  initLiquidScroll();
+  // Optional: Add listeners if we want clicking a bar to open something
 }
 
 function initLiquidScroll() {
