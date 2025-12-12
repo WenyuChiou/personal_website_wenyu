@@ -37,16 +37,16 @@ window.contentData = {
         },
         "paragraphs": {
             "en": [
-                "I study **how humans and communities make decisions under risk**—and how those decisions interact with natural systems.",
-                "My research uses **Agent-Based Modeling (ABM)** to simulate dynamic interactions between human behavior, social identity, and the environment, focusing on flood adaptation. I integrate behavioral theories (PMT, PADM) and survey data to examine adaptation pathways.",
-                "**Looking Forward:** I leverage **LLMs as cognitive agents** within ABMs to represent realistic reasoning and heterogeneity in human decision-making.",
-                "**Side Interests:** Outside of core academia, I explore **quantitative trading** and strategy development, applying computational models to financial markets."
+                "I study <strong>how humans and communities make decisions under risk</strong>—and how those decisions interact with natural systems.",
+                "My research uses <strong>Agent-Based Modeling (ABM)</strong> to simulate dynamic interactions between human behavior, social identity, and the environment, focusing on flood adaptation. I integrate behavioral theories (PMT, PADM) and survey data to examine adaptation pathways.",
+                "<strong>Looking Forward:</strong> I leverage <strong>LLMs as cognitive agents</strong> within ABMs to represent realistic reasoning and heterogeneity in human decision-making.",
+                "<strong>Side Interests:</strong> Outside of core academia, I explore <strong>quantitative trading</strong> and strategy development, applying computational models to financial markets."
             ],
             "zh": [
-                "我研究 **人類與社區在風險下如何做決策**——以及這些決策如何與自然系統互動。",
-                "我的研究使用 **代理人基模型 (ABM)** 模擬人類行為、社會認同與環境之間的動態互動，專注於洪水調適。我整合行為理論 (PMT, PADM) 與問卷數據來檢視調適路徑。",
-                "**展望未來：** 我利用 **LLM 作為認知代理人**，在 ABM 中呈現更真實的人類推理與異質性。",
-                "**個人興趣：** 在學術之外，我探索 **量化交易** 與策略開發，將計算模型應用於金融市場。"
+                "我研究 <strong>人類與社區在風險下如何做決策</strong>——以及這些決策如何與自然系統互動。",
+                "我的研究使用 <strong>代理人基模型 (ABM)</strong> 模擬人類行為、社會認同與環境之間的動態互動，專注於洪水調適。我整合行為理論 (PMT, PADM) 與問卷數據來檢視調適路徑。",
+                "<strong>展望未來：</strong> 我利用 <strong>LLM 作為認知代理人</strong>，在 ABM 中呈現更真實的人類推理與異質性。",
+                "<strong>個人興趣：</strong> 在學術之外，我探索 <strong>量化交易</strong> 與策略開發，將計算模型應用於金融市場。"
             ]
         },
         "infoCards": {
