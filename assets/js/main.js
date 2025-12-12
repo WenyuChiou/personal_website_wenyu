@@ -168,107 +168,113 @@ function renderSkills(lang) {
  * Render Experience & Education as a Gantt Chart Timeline
  * Horizontal bars showing time spans with overlapping activities
  */
+/**
+ * Render Experience & Education
+ */
+/**
+ * Render Experience & Education as Vertical Timeline with Duration Bars
+ * Explicit relative duration visualization as requested
+ */
 function renderExperience(lang) {
   const container = document.getElementById('experience-sections');
   if (!container) return;
 
-  // Define timeline data with start/end years and category manually for precise control
-  const timelineData = [
-    // Education (Top Row)
-    { id: 'lehigh_phd', label: { en: 'Lehigh PhD', zh: '理海大學 博士' }, start: 2024.6, end: 2025.5, row: 0, type: 'edu', color: '#3b82f6', subtitle: { en: 'Civil & Env. Eng.', zh: '土木環工' } },
-    { id: 'ncu_ms', label: { en: 'NCU M.S.', zh: '中央大學 碩士' }, start: 2021.7, end: 2023.6, row: 0, type: 'edu', color: '#10b981', subtitle: { en: 'Hydrology', zh: '水文科學' } },
-    { id: 'ncu_undergrad', label: { en: 'NCU B.S.', zh: '中央大學 學士' }, start: 2017.7, end: 2021.6, row: 0, type: 'edu', color: '#8b5cf6', subtitle: { en: 'Earth Sciences', zh: '地球科學' } },
+  const data = window.contentData.experience;
 
-    // Work / Internships (Bottom Rows)
-    { id: 'ncu_ra', label: { en: 'NCU RA', zh: '專任研究助理' }, start: 2024.0, end: 2024.5, row: 1, type: 'work', color: '#6366f1' },
-    { id: 'ncdr_intern', label: { en: 'NCDR Intern', zh: '災防中心實習' }, start: 2022.5, end: 2022.7, row: 1, type: 'intern', color: '#ef4444' }, /* Summer 2022 overlap */
-    { id: 'ncu_gra', label: { en: 'NCU GRA', zh: '兼任研究助理' }, start: 2021.7, end: 2023.6, row: 2, type: 'work', color: '#06b6d4' }, /* Concurrent with MS */
-    { id: 'ies_intern', label: { en: 'IES Intern', zh: '中研院實習' }, start: 2020.5, end: 2020.7, row: 1, type: 'intern', color: '#f59e0b' } /* Summer 2020 overlap */
+  // 1. Get items and define precise dates for duration calculation
+  // Assume: 2017 start for scale calculation
+  const START_YEAR = 2017;
+  const END_YEAR = 2025;
+  const TOTAL_MONTHS = (END_YEAR - START_YEAR + 1) * 12;
+
+  // Manual mapping for precise duration visualization
+  const items = [
+    { id: 'lehigh_phd', start: new Date(2024, 7), end: new Date(), type: 'edu', color: '#3b82f6' }, // Aug 2024 - Now
+    { id: 'ncu_ra', start: new Date(2024, 0), end: new Date(2024, 5), type: 'work', color: '#8b5cf6' }, // Jan - Jun 2024
+    { id: 'ncu_ms', start: new Date(2021, 8), end: new Date(2024, 5), type: 'edu', color: '#10b981' }, // Sep 2021 - Jun 2024
+    { id: 'ncu_gra', start: new Date(2021, 8), end: new Date(2023, 6), type: 'work', color: '#06b6d4' }, // Sep 2021 - Jul 2023 (Concurrent)
+    { id: 'ncdr_intern', start: new Date(2022, 6), end: new Date(2022, 7), type: 'intern', color: '#ef4444' }, // Jul - Aug 2022
+    { id: 'ncu_undergrad', start: new Date(2017, 8), end: new Date(2021, 5), type: 'edu', color: '#8b5cf6' }, // Sep 2017 - Jun 2021
+    { id: 'ies_intern', start: new Date(2020, 6), end: new Date(2020, 7), type: 'intern', color: '#f59e0b' } // Jul - Aug 2020
   ];
 
-  const startYear = 2017;
-  const endYear = 2025; // Viewing window
-  const totalYears = endYear - startYear + 1; // +1 to include endYear fully if needed, or just range
+  // Helper to find data content
+  const getContent = (id) => {
+    const cat = data.categories.find(c => c.items.some(i => i.id === id));
+    return cat ? cat.items.find(i => i.id === id) : null;
+  };
 
-  // Generate ticks
-  const years = [];
-  for (let y = startYear; y <= endYear; y++) {
-    years.push(y);
-  }
-
-  const rowLabels = [
-    { en: 'Education', zh: '學歷' },
-    { en: 'Experience', zh: '經歷' },
-    { en: '', zh: '' } // Extra row for GRA concurrent
-  ];
+  // Sort by start date descending
+  items.sort((a, b) => b.start - a.start);
 
   const html = `
-    <div class="gantt-container" id="gantt-chart">
-      <div class="gantt-scroll-wrapper">
-        <div class="gantt-chart">
-          <!-- Header (Years) -->
-          <div class="gantt-header">
-            <div class="gantt-row-label-placeholder"></div>
-            <div class="gantt-timeline-ticks">
-              ${years.map(y => `<div class="gantt-tick"><span>${y}</span></div>`).join('')}
-            </div>
-          </div>
+    <div class="timeline" id="liquid-timeline">
+      <div class="timeline-progress" id="timeline-progress"></div>
+      ${items.map(item => {
+    const content = getContent(item.id);
+    if (!content) return '';
 
-          <!-- Body -->
-          <div class="gantt-body">
-            ${[0, 1, 2].map(rowIndex => `
-              <div class="gantt-row">
-                <div class="gantt-row-label">${rowLabels[rowIndex][lang]}</div>
-                <div class="gantt-row-track">
-                  <!-- Vertical Grid Lines -->
-                  <div class="gantt-grid-lines">
-                     ${years.map(() => `<div class="gantt-grid-line"></div>`).join('')}
-                  </div>
+    // Calculate duration metrics
+    const start = item.start;
+    const end = item.end || new Date(); // If ongoing
+    const months = Math.max(1, (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()));
+    const widthPercent = Math.min(100, (months / TOTAL_MONTHS) * 120); // Scale factor
 
-                  <!-- Bars -->
-                  ${timelineData.filter(item => item.row === rowIndex).map(item => {
-    const duration = item.end - item.start;
-    const left = ((item.start - startYear) / (endYear - startYear + 1)) * 100;
-    const width = (duration / (endYear - startYear + 1)) * 100;
-
-    // Min width handling for short internships so text fits or icon shows
-    const safeWidth = Math.max(width, 4);
+    // Duration text
+    const years = Math.floor(months / 12);
+    const remMonths = months % 12;
+    let durationStr = '';
+    if (lang === 'en') {
+      durationStr = (years > 0 ? years + ' yrs ' : '') + (remMonths > 0 ? remMonths + ' mos' : '');
+      if (!durationStr) durationStr = '< 1 mo';
+    } else {
+      durationStr = (years > 0 ? years + ' 年 ' : '') + (remMonths > 0 ? remMonths + ' 個月' : '');
+      if (!durationStr) durationStr = '少於 1 個月';
+    }
 
     return `
-                      <div class="gantt-bar-item tooltip-trigger" 
-                           style="left: ${left}%; width: ${safeWidth}%; background-color: ${item.color};"
-                           data-id="${item.id}">
-                        <div class="gantt-bar-content">
-                          <span class="gantt-bar-icon">${item.type === 'edu' ? '🎓' : item.type === 'intern' ? '🏢' : '💼'}</span>
-                          <span class="gantt-bar-text">${item.label[lang]}</span>
-                        </div>
-                        <!-- Simple hover tooltip now, sophisticated content later -->
-                      </div>
-                    `;
-  }).join('')}
-                </div>
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-dot" style="border-color: ${item.color};"></div>
+          <div class="timeline-content">
+            <!-- Header -->
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">${content.title[lang]}</h3>
+                <span class="timeline-institution">${content.institution[lang]}</span>
               </div>
-            `).join('')}
+              <span class="timeline-role-type">${item.type === 'edu' ? (lang === 'en' ? 'Education' : '學歷') : (item.type === 'intern' ? (lang === 'en' ? 'Internship' : '實習') : (lang === 'en' ? 'Work' : '工作'))}</span>
+            </div>
+            
+            <span class="timeline-date" style="color:${item.color}">${content.date[lang]}</span>
+
+            <!-- Explicit Duration Bar -->
+            <div class="timeline-duration-container">
+               <div class="duration-label">
+                  <span>Duration: ${durationStr}</span>
+               </div>
+               <div class="duration-visual-track">
+                  <div class="duration-visual-bar" style="width: ${Math.max(2, widthPercent)}%; background: ${item.color};"></div>
+               </div>
+            </div>
+
+            <!-- Description -->
+            <div class="timeline-desc">
+               ${content.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${content.summary[lang]}</p>` : ''}
+               <ul>
+                  ${content.bullets[lang].slice(0, 3).map(b => `<li>${b}</li>`).join('')}
+               </ul>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Legend -->
-      <div class="gantt-legend">
-        <div class="legend-item"><span class="dot" style="background:#3b82f6"></span> Education</div>
-        <div class="legend-item"><span class="dot" style="background:#06b6d4"></span> Work</div>
-        <div class="legend-item"><span class="dot" style="background:#f59e0b"></span> Internship</div>
-      </div>
-
-      <!-- Detail Panel Placeholder if needed, or reuse sidebar? 
-           For now, let's keep interactions simple: Hover to see full title/dates. 
-      -->
+        `;
+  }).join('')}
     </div>
   `;
 
   container.innerHTML = html;
 
-  // Optional: Add listeners if we want clicking a bar to open something
+  // Re-init scroll
+  initLiquidScroll();
 }
 
 function initLiquidScroll() {
