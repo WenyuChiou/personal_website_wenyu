@@ -1890,54 +1890,112 @@
       position: relative;
     }
 
+    /* Gradient timeline line */
     .timeline-nav::before {
       content: '';
       position: absolute;
-      left: 6px;
-      top: 0;
-      bottom: 0;
+      left: 8px;
+      top: 10px;
+      bottom: 10px;
       width: 2px;
-      background: var(--color-border);
+      background: linear-gradient(180deg, var(--color-accent) 0%, #22d3ee 50%, var(--color-accent) 100%);
+      border-radius: 2px;
     }
 
+    /* Timeline item - card style */
     .timeline-nav-item {
       position: relative;
-      padding-left: 24px;
-      margin-bottom: 0.75rem;
+      padding: 0.75rem 0.75rem 0.75rem 2rem;
+      margin-bottom: 0.5rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 8px;
+      background: transparent;
     }
 
+    .timeline-nav-item:hover {
+      background: rgba(59, 130, 246, 0.08);
+      transform: translateX(4px);
+    }
+
+    .timeline-nav-item.active {
+      background: rgba(59, 130, 246, 0.12);
+    }
+
+    /* Animated dot */
     .timeline-nav-item::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 4px;
+      left: 2px;
+      top: 50%;
+      transform: translateY(-50%);
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: var(--color-bg);
-      border: 2px solid var(--color-border);
-      transition: all 0.3s ease;
+      background: var(--color-bg-alt);
+      border: 3px solid var(--color-border);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1;
     }
 
-    .timeline-nav-item:hover::before,
+    .timeline-nav-item:hover::before {
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+
     .timeline-nav-item.active::before {
       border-color: var(--color-accent);
       background: var(--color-accent);
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
     }
 
+    /* Inner ring for active state */
+    .timeline-nav-item.active::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: white;
+      z-index: 2;
+    }
+
+    /* Year badge - pill style */
     .timeline-nav-year {
-      font-size: 0.7rem;
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
       color: var(--color-accent);
-      font-weight: 600;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.2rem;
     }
 
+    .timeline-nav-item:hover .timeline-nav-year,
+    .timeline-nav-item.active .timeline-nav-year {
+      background: var(--color-accent);
+      color: white;
+    }
+
+    /* Label - better typography */
     .timeline-nav-label {
-      font-size: 0.8rem;
-      color: var(--color-secondary);
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
       line-height: 1.3;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-nav-item:hover .timeline-nav-label {
+      color: var(--color-accent);
     }
 
     .sidebar-social {
