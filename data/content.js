@@ -478,7 +478,7 @@ window.contentData = {
                     "en": "AGU 2023 poster presenting integrated research combining electrical resistivity tomography (ERT) techniques, field observations, and THMC3D numerical simulations to characterize the spatiotemporal dynamics of submarine groundwater discharge (SGD) in the Taoyuan coastal tableland.",
                     "zh": "AGU 2023 海報，呈現整合電阻率層析成像 (ERT) 技術、現場觀測與 THMC3D 數值模擬的研究，特徵化桃園海岸台地海底地下水排放 (SGD) 的時空動力學。"
                 },
-                "image": "assets/images/projects/groundwater/cover.jpg",
+                "image": "assets/images/projects/groundwater/anima.gif",
                 "tags": ["AGU 2023", "ERT", "SGD", "Poster"],
                 "links": { "poster": "#" }
             },
