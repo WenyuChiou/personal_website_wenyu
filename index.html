@@ -107,8 +107,10 @@
     <!-- ========== Main Content Area ========== -->
     <div class="main-content">
 
-      <!-- ========== Navigation Bar (Hidden on Desktop) ========== -->
-      <nav>
+      <!-- Navigation Bar (Hidden on Desktop with sidebar) -->
+      <nav></nav>
+
+      <main>
         <!-- ========== Hero Section ========== -->
         <!-- CUSTOMIZE: Name, tagline, description, avatar, CV link -->
         <section class="hero" id="home">
@@ -296,61 +298,61 @@
           </div>
         </section>
 
-        </main>
+      </main>
 
-        <!-- ========== Footer ========== -->
-        <footer>
-          <div class="container">
-            <p data-i18n="footer_copyright">&copy; 2025 Wenyu Chiou. All rights reserved.</p>
-            <a href="#" class="back-to-top" data-i18n="footer_back_to_top">Back to top ↑</a>
+      <!-- ========== Footer ========== -->
+      <footer>
+        <div class="container">
+          <p data-i18n="footer_copyright">&copy; 2025 Wenyu Chiou. All rights reserved.</p>
+          <a href="#" class="back-to-top" data-i18n="footer_back_to_top">Back to top ↑</a>
+        </div>
+      </footer>
+
+      <!-- ========== Modal (for project details) ========== -->
+      <div class="modal" id="projectModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 id="modalTitle"></h3>
+            <button class="modal-close" id="modalClose">&times;</button>
           </div>
-        </footer>
-
-        <!-- ========== Modal (for project details) ========== -->
-        <div class="modal" id="projectModal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 id="modalTitle"></h3>
-              <button class="modal-close" id="modalClose">&times;</button>
-            </div>
-            <div class="modal-body">
-              <p id="modalDescription"></p>
-            </div>
+          <div class="modal-body">
+            <p id="modalDescription"></p>
           </div>
         </div>
+      </div>
 
-        <!-- ========== External JavaScript Modules ========== -->
-        <!-- Local Data (bypassing CORS) -->
-        <script src="data/content.js"></script>
-        <!-- Load language data dictionary (embedded for backward compatibility - deprecated) -->
-        <!-- <script src="assets/js/i18n.js"></script> -->
-        <!-- Main interactive logic -->
-        <script src="assets/js/main.js"></script>
-        <!-- Google Analytics integration -->
-        <script src="assets/js/analytics.js"></script>
+      <!-- ========== External JavaScript Modules ========== -->
+      <!-- Local Data (bypassing CORS) -->
+      <script src="data/content.js"></script>
+      <!-- Load language data dictionary (embedded for backward compatibility - deprecated) -->
+      <!-- <script src="assets/js/i18n.js"></script> -->
+      <!-- Main interactive logic -->
+      <script src="assets/js/main.js"></script>
+      <!-- Google Analytics integration -->
+      <script src="assets/js/analytics.js"></script>
 
-        <!-- Back to Top Button -->
-        <button class="back-to-top" id="backToTop" aria-label="Back to top">
-          ↑
-        </button>
+      <!-- Back to Top Button -->
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+      </button>
 
-        <!-- Project Bookmark Tabs -->
-        <div class="project-bookmarks" id="projectBookmarks">
-          <div class="bookmark-tab" data-category="research" data-i18n="bookmark_research">Research</div>
-          <div class="bookmark-tab" data-category="side" data-i18n="bookmark_projects">Projects</div>
+      <!-- Project Bookmark Tabs -->
+      <div class="project-bookmarks" id="projectBookmarks">
+        <div class="bookmark-tab" data-category="research" data-i18n="bookmark_research">Research</div>
+        <div class="bookmark-tab" data-category="side" data-i18n="bookmark_projects">Projects</div>
+      </div>
+
+      <!-- Project Drawer Panel -->
+      <div class="project-drawer" id="projectDrawer">
+        <div class="drawer-header">
+          <h3 id="drawerTitle">Research Projects</h3>
+          <button class="drawer-close" id="drawerClose" aria-label="Close drawer">×</button>
         </div>
-
-        <!-- Project Drawer Panel -->
-        <div class="project-drawer" id="projectDrawer">
-          <div class="drawer-header">
-            <h3 id="drawerTitle">Research Projects</h3>
-            <button class="drawer-close" id="drawerClose" aria-label="Close drawer">×</button>
-          </div>
-          <div class="drawer-content" id="drawerContent">
-            <!-- Projects will be dynamically rendered here -->
-          </div>
+        <div class="drawer-content" id="drawerContent">
+          <!-- Projects will be dynamically rendered here -->
         </div>
-        <div class="drawer-backdrop" id="drawerBackdrop"></div>
+      </div>
+      <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
     </div><!-- end main-content -->
   </div><!-- end app-layout -->
