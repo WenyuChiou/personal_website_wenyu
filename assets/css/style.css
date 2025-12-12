@@ -2128,3 +2128,184 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ========== Interactive Design & Micro-Animations ========== */
+
+    /* Timeline Item Hover - Pulse effect on the dot */
+    .timeline-nav-item:hover .timeline-nav-label {
+      color: var(--color-accent);
+      transform: translateX(4px);
+    }
+
+    .timeline-nav-item .timeline-nav-label {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .timeline-nav-item:hover::before {
+      animation: pulse 1s ease infinite;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    /* Card Hover Effects - Lift and glow */
+    .highlight-card,
+    .drawer-project-card,
+    .skill-tag {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .highlight-card:hover,
+    .drawer-project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Animated underline for links */
+    .sidebar-name,
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent), #22d3ee);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .section-title:hover::after,
+    .section:hover .section-title::after {
+      width: 60px;
+    }
+
+    /* Skill tags interactive */
+    .skill-tag:hover {
+      background: var(--color-accent);
+      color: white !important;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* Avatar floating animation */
+    .sidebar-avatar {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    /* Button ripple effect */
+    .btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s, height 0.4s;
+    }
+
+    .btn:active::after {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Social icons bounce on hover */
+    .sidebar-social a:hover {
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      30% {
+        transform: translateY(-8px);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
+
+      70% {
+        transform: translateY(-6px);
+      }
+    }
+
+    /* Smooth scroll-triggered fade-in */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Glassmorphism effect for special elements */
+    .experience-detail-panel {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Gradient border animation */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .sidebar-avatar {
+      border: 4px solid transparent;
+      background: linear-gradient(var(--color-bg-alt), var(--color-bg-alt)) padding-box,
+        linear-gradient(135deg, var(--color-accent), #22d3ee, var(--color-accent)) border-box;
+      background-size: 200% 200%;
+      animation: float 4s ease-in-out infinite, gradientShift 3s ease infinite;
+    }
