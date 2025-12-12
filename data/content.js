@@ -5,12 +5,12 @@ window.contentData = {
             "zh": "邱文瑜"
         },
         "title": {
-            "en": "Ph.D. Candidate | Civil & Environmental Engineering",
-            "zh": "博士候選人 | 土木與環境工程"
+            "en": "Ph.D. Candidate | Complex Water Adaptive System Group",
+            "zh": "博士候選人 | 複雜水調適系統研究組"
         },
         "tagline": {
-            "en": "Lehigh University | Center of Catastrophe Modeling and Resilience",
-            "zh": "里海大學 | 巨災模型與韌性中心"
+            "en": "Department of Civil and Environmental Engineering, Lehigh University",
+            "zh": "里海大學 土木與環境工程學系"
         },
         "description": {
             "en": "Modeling how people decide under risk — from flood insurance choices to community resilience.",
