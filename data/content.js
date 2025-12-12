@@ -281,8 +281,8 @@ window.contentData = {
                             "zh": "國立中央大學"
                         },
                         "date": {
-                            "en": "Aug 2023 – Present",
-                            "zh": "2023年8月 – 至今"
+                            "en": "Jan 2024 – Jun 2024",
+                            "zh": "2024年1月 – 2024年6月"
                         },
                         "bullets": {
                             "en": [
@@ -353,8 +353,8 @@ window.contentData = {
                         },
                         "image": "assets/images/Catastophy Modeling Temporary.jpg",
                         "date": {
-                            "en": "Aug 2023 – Present",
-                            "zh": "2023年8月 – 至今"
+                            "en": "Aug 2024 – Present",
+                            "zh": "2024年8月 – 至今"
                         },
                         "bullets": {
                             "en": [
@@ -384,8 +384,8 @@ window.contentData = {
                             "zh": "國立中央大學，台灣"
                         },
                         "date": {
-                            "en": "Sep 2021 – Jul 2023",
-                            "zh": "2021年9月 – 2023年7月"
+                            "en": "Aug 2021 – Jun 2023",
+                            "zh": "2021年8月 – 2023年6月"
                         },
                         "bullets": {
                             "en": [
@@ -631,6 +631,10 @@ window.contentData = {
                 "fullDescription": {
                     "en": "Conducted independent research as an undergraduate student, funded by the NSTC College Student Research Project grant. Focused on [Specific Topic/Methodology].",
                     "zh": "執行科技部大專學生研究計畫，進行獨立研究。專注於[具體題目/方法]。"
+                },
+                "date": {
+                    "en": "Jul 2020 – Jun 2021",
+                    "zh": "2020年7月 – 2021年6月"
                 },
                 "image": "",
                 "tags": [
