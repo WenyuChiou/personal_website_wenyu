@@ -207,70 +207,6 @@ window.contentData = {
                 },
                 "items": [
                     {
-                        "id": "ncdr_intern",
-                        "title": {
-                            "en": "Summer Intern",
-                            "zh": "暑期實習生"
-                        },
-                        "institution": {
-                            "en": "National Science and Technology Center for Disaster Reduction (NCDR)",
-                            "zh": "國家災害防救科技中心"
-                        },
-                        "image": "assets/images/projects/ncdr/cover.jpg",
-                        "date": {
-                            "en": "Jul 2022 – Aug 2022",
-                            "zh": "2022年7月 – 2022年8月"
-                        },
-                        "bullets": {
-                            "en": [
-                                "Conducted research on climate change adaptation strategies and disaster risk reduction",
-                                "Participated in data analysis and report compilation for national disaster management projects",
-                                "Collaborated with interdisciplinary teams to assess climate risks in Taiwan"
-                            ],
-                            "zh": [
-                                "進行氣候變遷調適策略與災害風險減緩之研究",
-                                "參與國家災害管理計畫之資料分析與報告彙整",
-                                "與跨領域團隊合作評估台灣氣候風險"
-                            ]
-                        },
-                        "summary": {
-                            "en": "Research intern focusing on climate adaptation and disaster risk analysis.",
-                            "zh": "專注於氣候調適與災害風險分析的研究實習。"
-                        }
-                    },
-                    {
-                        "id": "ies_intern",
-                        "title": {
-                            "en": "Summer Intern",
-                            "zh": "暑期實習生"
-                        },
-                        "institution": {
-                            "en": "Institute of Earth Sciences, Academia Sinica",
-                            "zh": "中央研究院 地球科學研究所"
-                        },
-                        "image": "assets/images/projects/ies/cover.jpg",
-                        "date": {
-                            "en": "Jul 2021 – Aug 2021",
-                            "zh": "2021年7月 – 2021年8月"
-                        },
-                        "bullets": {
-                            "en": [
-                                "Analyzed seasonal cycles of water isotope composition and moisture source variations",
-                                "Investigated oxygen and hydrogen isotope distributions and their temporal patterns",
-                                "Studied deuterium excess variations and their relationship to ENSO (El Niño-Southern Oscillation)"
-                            ],
-                            "zh": [
-                                "分析水同位素組成的季節性循環與水汽來源變化",
-                                "調查氧與氫同位素分布及其時間變化模式",
-                                "研究氘過量變化及其與ENSO（聖嬰-南方振盪）的關係"
-                            ]
-                        },
-                        "summary": {
-                            "en": "Research intern analyzing water isotope geochemistry and atmospheric dynamics.",
-                            "zh": "分析水同位素地球化學與大氣動力學的研究實習。"
-                        }
-                    },
-                    {
                         "id": "ncu_ra",
                         "title": {
                             "en": "Research Assistant, Surface Hydrology Group",
@@ -303,6 +239,38 @@ window.contentData = {
                         }
                     },
                     {
+                        "id": "ncdr_intern",
+                        "title": {
+                            "en": "Summer Intern",
+                            "zh": "暑期實習生"
+                        },
+                        "institution": {
+                            "en": "National Science and Technology Center for Disaster Reduction (NCDR)",
+                            "zh": "國家災害防救科技中心"
+                        },
+                        "image": "assets/images/projects/ncdr/cover.jpg",
+                        "date": {
+                            "en": "Jul 2022 – Aug 2022",
+                            "zh": "2022年7月 – 2022年8月"
+                        },
+                        "bullets": {
+                            "en": [
+                                "Conducted research on climate change adaptation strategies and disaster risk reduction",
+                                "Participated in data analysis and report compilation for national disaster management projects",
+                                "Collaborated with interdisciplinary teams to assess climate risks in Taiwan"
+                            ],
+                            "zh": [
+                                "進行氣候變遷調適策略與災害風險減緩之研究",
+                                "參與國家災害管理計畫之資料分析與報告彙整",
+                                "與跨領域團隊合作評估台灣氣候風險"
+                            ]
+                        },
+                        "summary": {
+                            "en": "Research intern focusing on climate adaptation and disaster risk analysis.",
+                            "zh": "專注於氣候調適與災害風險分析的研究實習。"
+                        }
+                    },
+                    {
                         "id": "ncu_gra",
                         "title": {
                             "en": "Graduate Research Assistant",
@@ -331,6 +299,38 @@ window.contentData = {
                         "summary": {
                             "en": "Conducted field investigations and numerical simulations of groundwater discharge and salinity dynamics in Taoyuan coastal area",
                             "zh": "進行桃園沿海地下水排放與鹽化動態的現地調查與數值模擬"
+                        }
+                    },
+                    {
+                        "id": "ies_intern",
+                        "title": {
+                            "en": "Summer Intern",
+                            "zh": "暑期實習生"
+                        },
+                        "institution": {
+                            "en": "Institute of Earth Sciences, Academia Sinica",
+                            "zh": "中央研究院 地球科學研究所"
+                        },
+                        "image": "assets/images/projects/ies/cover.jpg",
+                        "date": {
+                            "en": "Jul 2020 – Aug 2020",
+                            "zh": "2020年7月 – 2020年8月"
+                        },
+                        "bullets": {
+                            "en": [
+                                "Analyzed seasonal cycles of water isotope composition and moisture source variations",
+                                "Investigated oxygen and hydrogen isotope distributions and their temporal patterns",
+                                "Studied deuterium excess variations and their relationship to ENSO (El Niño-Southern Oscillation)"
+                            ],
+                            "zh": [
+                                "分析水同位素組成的季節性循環與水汽來源變化",
+                                "調查氧與氫同位素分布及其時間變化模式",
+                                "研究氘過量變化及其與ENSO（聖嬰-南方振盪）的關係"
+                            ]
+                        },
+                        "summary": {
+                            "en": "Research intern analyzing water isotope geochemistry and atmospheric dynamics.",
+                            "zh": "分析水同位素地球化學與大氣動力學的研究實習。"
                         }
                     }
                 ]
