@@ -163,11 +163,15 @@ function renderSkills(lang) {
 
 /**
  * Render Experience & Education
+ * Render Experience & Education as a Gantt Chart Timeline/**
+ * Render Experience & Education
  */
 /**
- * Render Experience & Education as a Gantt Chart Timeline
+ * Render Experience & Education
+ */
+/**
  * Render Experience & Education as Refined Vertical Timeline
- * Date on Left Side, clean vertical line, compact layout
+ * Parallel Rows with Flex Width Control
  */
 function renderExperience(lang) {
   const container = document.getElementById('experience-sections');
@@ -175,75 +179,110 @@ function renderExperience(lang) {
 
   const data = window.contentData.experience;
 
-  // 1. Get items (Standard merged list)
-  const items = [
-    { id: 'lehigh_phd', start: new Date(2024, 7), end: new Date(), type: 'edu', color: '#3b82f6' }, // Aug 2024 - Now
-    { id: 'ncu_ra', start: new Date(2024, 0), end: new Date(2024, 5), type: 'work', color: '#8b5cf6' }, // Jan - Jun 2024
-    { id: 'ncu_ms', start: new Date(2021, 8), end: new Date(2024, 5), type: 'edu', color: '#10b981' }, // Sep 2021 - Jun 2024
-    { id: 'ncu_gra', start: new Date(2021, 8), end: new Date(2023, 6), type: 'work', color: '#06b6d4' }, // Sep 2021 - Jul 2023 
-    { id: 'ncdr_intern', start: new Date(2022, 6), end: new Date(2022, 7), type: 'intern', color: '#ef4444' }, // Jul - Aug 2022
-    { id: 'ncu_undergrad', start: new Date(2017, 8), end: new Date(2021, 5), type: 'edu', color: '#8b5cf6' }, // Sep 2017 - Jun 2021
-    { id: 'ies_intern', start: new Date(2020, 6), end: new Date(2020, 7), type: 'intern', color: '#f59e0b' } // Jul - Aug 2020
+  // Configuration for Rows (Parallel Grouping)
+  // flex: Relative width weight (e.g. 2 vs 1)
+  const rows = [
+    {
+      id: 'row_phd',
+      items: [
+        { id: 'lehigh_phd', flex: 1, type: 'edu', color: '#3b82f6' }
+      ]
+    },
+    {
+      id: 'row_ms',
+      items: [
+        { id: 'ncu_ms', flex: 1.4, type: 'edu', color: '#10b981' }, // Main
+        { id: 'ncu_gra', flex: 1, type: 'work', color: '#06b6d4' }, // Parallel GRA
+        { id: 'ncdr_intern', flex: 0.8, type: 'intern', color: '#ef4444' } // Parallel Intern
+      ]
+    },
+    {
+      id: 'row_bs',
+      items: [
+        { id: 'ncu_undergrad', flex: 1.4, type: 'edu', color: '#8b5cf6' }, // Main
+        { id: 'ies_intern', flex: 1, type: 'intern', color: '#f59e0b' } // Parallel Intern
+      ]
+    }
   ];
 
-  // Helper to find data content
-  const getContent = (id) => {
-    const cat = data.categories.find(c => c.items.some(i => i.id === id));
-    return cat ? cat.items.find(i => i.id === id) : null;
-  };
+  // Helper to get content, identifying and merging manual overrides if needed
+  const getContent = (id, type) => {
+    // 1. Try to find in standard data
+    let catId = type === 'edu' ? 'education' : 'professional';
+    // Fallback search in all categories just in case
+    let cat = data.categories.find(c => c.items.some(i => i.id === id));
+    let item = cat ? cat.items.find(i => i.id === id) : null;
 
-  // Sort by start date descending
-  items.sort((a, b) => b.start - a.start);
+    // 2. Manual Data Injection for GRA if missing or to ensure specific text matches user request
+    if (id === 'ncu_ra') {
+      // Renaming/Ensuring Title if needed, but existing is likely "Research Assistant"
+    }
+    if (id === 'ncu_gra' && !item) {
+      // Create if missing
+      item = {
+        id: 'ncu_gra',
+        title: { en: 'Graduate Research Assistant', zh: '兼任研究助理' },
+        institution: { en: 'National Central University', zh: '國立中央大學' },
+        date: { en: 'Sep 2021 – Jul 2023', zh: '2021年9月 - 2023年7月' }, // Explicit User Request
+        summary: { en: 'Research Assistant during Master\'s studies.', zh: '碩士期間擔任研究助理' },
+        bullets: { en: [], zh: [] }
+      };
+    } else if (id === 'ncu_gra' && item) {
+      // Override Title to match user request exactly if needed
+      item = { ...item }; // Copy
+      item.title = { en: 'Graduate Research Assistant', zh: '兼任研究助理' };
+      item.date = { en: 'Sep 2021 – Jul 2023', zh: '2021年9月 - 2023年7月' };
+    }
+
+    return item;
+  };
 
   const html = `
     <div class="timeline" id="liquid-timeline">
-      ${items.map(item => {
-    const content = getContent(item.id);
-    if (!content) return '';
+      ${rows.map(row => {
+    // Expand items with content
+    const rowItems = row.items.map(conf => ({
+      conf,
+      content: getContent(conf.id, conf.type)
+    })).filter(x => x.content); // Only render if content exists
 
-    // Calculate duration text (kept subtle)
-    const start = item.start;
-    const end = item.end || new Date();
-    const months = Math.max(1, (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()));
-    const years = Math.floor(months / 12);
-    const remMonths = months % 12;
-    let durationStr = '';
-    if (lang === 'en') {
-      durationStr = (years > 0 ? years + ' yrs ' : '') + (remMonths > 0 ? remMonths + ' mos' : '');
-      if (!durationStr) durationStr = '< 1 mo';
-    } else {
-      durationStr = (years > 0 ? years + ' 年 ' : '') + (remMonths > 0 ? remMonths + ' 個月' : '');
-      if (!durationStr) durationStr = '少於 1 個月';
-    }
+    if (rowItems.length === 0) return '';
+
+    // Use the date of the first item (Primary) for the timeline axis
+    const mainItem = rowItems[0];
 
     return `
         <div class="timeline-item reveal-on-scroll">
           <!-- Left: Date -->
           <div class="timeline-left">
-             <span class="timeline-date-label">${content.date[lang]}</span>
-             <span class="timeline-date-duration">${durationStr}</span>
+             <span class="timeline-date-label">${mainItem.content.date[lang]}</span>
           </div>
 
           <!-- Middle: Dot -->
-          <div class="timeline-dot" style="border-color: ${item.color};"></div>
+          <div class="timeline-dot" style="border-color: ${mainItem.conf.color};"></div>
 
-          <!-- Right: Content -->
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 class="timeline-title">${content.title[lang]}</h3>
-              <span class="timeline-role-type" style="color:${item.color}; border-color:${item.color}20; background:${item.color}10;">
-                ${item.type === 'edu' ? (lang === 'en' ? 'Education' : '學歷') : (item.type === 'intern' ? (lang === 'en' ? 'Internship' : '實習') : (lang === 'en' ? 'Work' : '工作'))}
-              </span>
-            </div>
-            
-            <span class="timeline-institution">${content.institution[lang]}</span>
+          <!-- Right: Content Row (Side-by-Side Flex) -->
+          <div class="timeline-content-row">
+            ${rowItems.map(ri => `
+              <div class="timeline-content" style="flex: ${ri.conf.flex}; min-width: 200px;">
+                <div class="timeline-header">
+                  <h3 class="timeline-title" style="font-size: 1.1rem;">${ri.content.title[lang]}</h3>
+                  <span class="timeline-role-type" style="color:${ri.conf.color}; border-color:${ri.conf.color}20; background:${ri.conf.color}10;">
+                    ${ri.conf.type === 'edu' ? (lang === 'en' ? 'Education' : '學歷') : (ri.conf.type === 'intern' ? (lang === 'en' ? 'Internship' : '實習') : (lang === 'en' ? 'Work' : '工作'))}
+                  </span>
+                </div>
+                
+                ${/* Show date for side items if distinct? Or just hide to keep clean? User asked for parallel. 
+                     Maybe show date subtitle for *all* to be clear on duration, since they might differ slightly within the row. */ ''}
+                <span class="timeline-date-sub" style="color:${ri.conf.color}; opacity:0.8;">${ri.content.date[lang]}</span>
 
-            <div class="timeline-desc">
-               ${content.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${content.summary[lang]}</p>` : ''}
-               <ul>
-                  ${content.bullets[lang].slice(0, 3).map(b => `<li>${b}</li>`).join('')}
-               </ul>
-            </div>
+                <span class="timeline-institution">${ri.content.institution[lang]}</span>
+                
+                <div class="timeline-desc" style="font-size: 0.85rem;">
+                   ${ri.content.summary ? `<p style="margin-bottom:0.3rem;">${ri.content.summary[lang]}</p>` : ''}
+                </div>
+              </div>
+            `).join('')}
           </div>
         </div>
         `;

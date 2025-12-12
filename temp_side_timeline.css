@@ -1,0 +1,45 @@
+/* ========== Side-by-Side Timeline Extensions ========== */
+.timeline-content-row {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    margin-left: 1rem;
+    align-items: stretch;
+    /* Stretch to same height */
+    flex-wrap: wrap;
+}
+
+/* Reset margin for cards inside row */
+.timeline-content-row .timeline-content {
+    margin-left: 0;
+    width: auto;
+    /* Allow flex to control width */
+}
+
+.main-card {
+    flex: 3;
+    min-width: 280px;
+}
+
+.side-card {
+    flex: 2;
+    min-width: 200px;
+    background: var(--color-bg);
+    border: 2px dashed var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-date-sub {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .timeline-content-row {
+        flex-direction: column;
+    }
+}

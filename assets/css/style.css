@@ -1864,6 +1864,82 @@
       }
     }
 
+
+    /* ========== Side-by-Side Timeline Extensions ========== */
+    .timeline-content-row {
+      flex: 1;
+      display: flex;
+      gap: 1rem;
+      margin-left: 1rem;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      /* Enforce side-by-side single row */
+      overflow-x: auto;
+      /* Scroll if too wide on small screens? Or just wrap on mobile */
+    }
+
+    /* Reset margin for cards inside row */
+    .timeline-content-row .timeline-content {
+      margin-left: 0;
+      /* width is controlled by flex-grow/basis in inline styles or classes */
+    }
+
+    /* Base card style in row */
+    .timeline-content-row>.timeline-content {
+      min-width: 0;
+      /* Allow shrinking below content size if needed */
+    }
+
+    .timeline-date-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: block;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-content-row {
+        flex-wrap: wrap;
+        /* Stack on mobile */
+      }
+
+      .timeline-content-row>.timeline-content {
+        flex: 1 1 100% !important;
+        /* Full width on mobile */
+        min-width: auto;
+      }
+
+      .timeline-left {
+        width: auto;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 0.5rem;
+        padding-left: 3rem;
+        /* Align with content */
+      }
+
+      .timeline-item {
+        flex-direction: column;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-dot {
+        left: 12px;
+      }
+
+      .timeline-content {
+        margin-left: 3rem;
+      }
+
+      .timeline-content-row {
+        margin-left: 3rem;
+      }
+    }
+
     /* ========== App Layout with Left Sidebar ========== */
     .app-layout {
       display: grid;
