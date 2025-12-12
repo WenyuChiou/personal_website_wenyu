@@ -62,34 +62,63 @@
         </div>
       </div>
 
-      <!-- Timeline Navigation -->
+      <!-- Timeline Navigation - Nested Design -->
       <div class="sidebar-timeline">
         <div class="sidebar-section-title">Experience Timeline</div>
-        <ul class="timeline-nav" id="sidebarTimeline">
-          <li class="timeline-nav-item active" data-exp-id="lehigh_phd">
-            <span class="timeline-nav-year">Aug 2024 - Present</span>
-            <span class="timeline-nav-label">Lehigh PhD</span>
+        <ul class="timeline-nav nested-timeline" id="sidebarTimeline">
+
+          <!-- Lehigh PhD (Current) -->
+          <li class="timeline-nav-item timeline-education active" data-exp-id="lehigh_phd">
+            <span class="timeline-icon">🎓</span>
+            <div class="timeline-content">
+              <span class="timeline-nav-year">2024 - Present</span>
+              <span class="timeline-nav-label">Lehigh PhD</span>
+            </div>
+            <!-- Nested: Pre-PhD Work -->
+            <ul class="timeline-nested">
+              <li class="timeline-sub-item" data-exp-id="ncu_ra">
+                <span class="timeline-sub-icon">💼</span>
+                <span class="timeline-sub-label">NCU RA (Jan-Jun 2024)</span>
+              </li>
+            </ul>
           </li>
-          <li class="timeline-nav-item" data-exp-id="ncu_ra">
-            <span class="timeline-nav-year">Jan - Jun 2024</span>
-            <span class="timeline-nav-label">NCU RA</span>
+
+          <!-- NCU M.S. -->
+          <li class="timeline-nav-item timeline-education" data-exp-id="ncu_ms">
+            <span class="timeline-icon">🎓</span>
+            <div class="timeline-content">
+              <span class="timeline-nav-year">2021 - 2023</span>
+              <span class="timeline-nav-label">NCU M.S.</span>
+            </div>
+            <!-- Nested: Work during M.S. -->
+            <ul class="timeline-nested">
+              <li class="timeline-sub-item" data-exp-id="ncu_gra">
+                <span class="timeline-sub-icon">📚</span>
+                <span class="timeline-sub-label">GRA - Thesis Research</span>
+              </li>
+              <li class="timeline-sub-item" data-exp-id="ncdr_intern">
+                <span class="timeline-sub-icon">🏢</span>
+                <span class="timeline-sub-label">NCDR Intern (Summer 2022)</span>
+              </li>
+            </ul>
           </li>
-          <li class="timeline-nav-item" data-exp-id="ncdr_intern">
-            <span class="timeline-nav-year">Jul - Aug 2022</span>
-            <span class="timeline-nav-label">NCDR Intern</span>
+
+          <!-- NCU B.S. -->
+          <li class="timeline-nav-item timeline-education" data-exp-id="ncu_undergrad">
+            <span class="timeline-icon">🎓</span>
+            <div class="timeline-content">
+              <span class="timeline-nav-year">2017 - 2021</span>
+              <span class="timeline-nav-label">NCU B.S.</span>
+            </div>
+            <!-- Nested: Internship during B.S. -->
+            <ul class="timeline-nested">
+              <li class="timeline-sub-item" data-exp-id="ies_intern">
+                <span class="timeline-sub-icon">🏢</span>
+                <span class="timeline-sub-label">IES Intern (Summer 2020)</span>
+              </li>
+            </ul>
           </li>
-          <li class="timeline-nav-item" data-exp-id="ncu_ms">
-            <span class="timeline-nav-year">Sep 2021 - Jun 2024</span>
-            <span class="timeline-nav-label">NCU MS</span>
-          </li>
-          <li class="timeline-nav-item" data-exp-id="ies_intern">
-            <span class="timeline-nav-year">Jul - Aug 2020</span>
-            <span class="timeline-nav-label">IES Intern</span>
-          </li>
-          <li class="timeline-nav-item" data-exp-id="ncu_undergrad">
-            <span class="timeline-nav-year">Sep 2017 - Jun 2021</span>
-            <span class="timeline-nav-label">NCU ES</span>
-          </li>
+
         </ul>
       </div>
 
