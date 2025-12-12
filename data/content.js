@@ -440,7 +440,7 @@ window.contentData = {
         "items": [
             {
                 "id": "ai-trader",
-                "category": "trading",
+                "category": "side",
                 "name": {
                     "en": "AI-Trader Ollama",
                     "zh": "AI-Trader Ollama 全自動交易系統"
@@ -467,7 +467,7 @@ window.contentData = {
             },
             {
                 "id": "event-driven",
-                "category": "trading",
+                "category": "side",
                 "name": {
                     "en": "Event-Driven Trading Strategy",
                     "zh": "事件驅動交易策略 (Hydraulic Jump)"
