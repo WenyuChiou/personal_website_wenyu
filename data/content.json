@@ -1,0 +1,654 @@
+{
+  "personal": {
+    "name": {
+      "en": "Wenyu Chiou",
+      "zh": "邱文瑜"
+    },
+    "title": {
+      "en": "Data-Driven Researcher & Analyst",
+      "zh": "資料導向的研究者與分析師"
+    },
+    "tagline": {
+      "en": "Data-Driven Researcher & Analyst",
+      "zh": "資料導向的研究者與分析師"
+    },
+    "description": {
+      "en": "I work across hydrology, flood risk adaptation, and data-driven modeling, focusing on climate resilience and disaster risk analytics.",
+      "zh": "我的研究橫跨水文學、洪水風險調適與資料驅動的模型，專注於氣候韌性與災害風險分析。"
+    },
+    "avatar": "assets/images/profile/avatar.jpg",
+    "cv": {
+      "en": "assets/documents/CV_Wenyu_Chiou_EN.pdf",
+      "zh": "assets/documents/CV_Wenyu_Chiou_ZH.pdf"
+    }
+  },
+  "social": {
+    "email": "wec325@lehigh.edu",
+    "github": "https://github.com/WenyuChiou",
+    "linkedin": "https://www.linkedin.com/in/wenyu-chiou",
+    "scholar": "",
+    "orcid": "https://orcid.org/0009-0005-8006-1288",
+    "researchgate": ""
+  },
+  "about": {
+    "title": {
+      "en": "About Me",
+      "zh": "關於我"
+    },
+    "paragraphs": {
+      "en": [
+        "I hold a Master's degree in Hydrological and Oceanic Sciences from National Central University, where I specialized in groundwater dynamics, submarine groundwater discharge, and coastal aquifer systems. My research integrated field observations with advanced numerical modeling to understand water-soil interactions in complex environments.",
+        "Currently, I am expanding my focus to flood risk adaptation and behavioral modeling. I develop agent-based models that simulate household decision-making under climate hazards, incorporating cognitive frameworks (PMT, PADM) and social heterogeneity. My work bridges hydrology, risk analytics, and computational social science, with applications in resilience planning and disaster risk reduction.",
+        "I am passionate about leveraging data science, numerical modeling, and emerging AI technologies to tackle complex environmental and societal challenges. I am actively seeking PhD opportunities and research positions in climate adaptation, disaster risk analytics, and computational modeling."
+      ],
+      "zh": [
+        "我擁有國立中央大學水文與海洋科學研究所碩士學位，專攻地下水動力學、海底地下水排放與沿海含水層系統。我的研究結合現地觀測與先進的數值模擬，深入了解複雜環境中的水土交互作用。",
+        "目前，我正在擴展研究領域至洪水風險調適與行為模型。我開發代理人基模型來模擬家庭在氣候災害下的決策過程，整合認知框架（PMT、PADM）與社會異質性。我的研究連結水文學、風險分析與計算社會科學，應用於韌性規劃與災害風險減緩。",
+        "我熱衷於運用資料科學、數值模擬與新興的 AI 技術來解決複雜的環境與社會挑戰。目前正積極尋求氣候調適、災害風險分析與計算模型相關的博士與研究職位。"
+      ]
+    },
+    "infoCards": {
+      "location": {
+        "label": {
+          "en": "Location",
+          "zh": "所在地"
+        },
+        "value": {
+          "en": "New Taipei City, Taiwan",
+          "zh": "新北市，台灣"
+        }
+      },
+      "fields": {
+        "label": {
+          "en": "Research Areas",
+          "zh": "研究領域"
+        },
+        "value": {
+          "en": "Flood Risk, ABM, Hydrology",
+          "zh": "洪水風險、代理人基模型、水文學"
+        }
+      },
+      "status": {
+        "label": {
+          "en": "Current Status",
+          "zh": "目前狀態"
+        },
+        "value": {
+          "en": "Research Assistant",
+          "zh": "研究助理"
+        }
+      },
+      "languages": {
+        "label": {
+          "en": "Languages",
+          "zh": "語言能力"
+        },
+        "value": {
+          "en": "Mandarin, English",
+          "zh": "中文、英文"
+        }
+      }
+    }
+  },
+  "skills": {
+    "title": {
+      "en": "Skills & Expertise",
+      "zh": "技能與專長"
+    },
+    "categories": [
+      {
+        "id": "research",
+        "title": {
+          "en": "Research & Modeling",
+          "zh": "研究與模型建構"
+        },
+        "description": {
+          "en": "Quantitative analysis and simulation across environmental and social systems",
+          "zh": "橫跨環境與社會系統的定量分析與模擬"
+        },
+        "extra": {
+          "en": "Expertise in coupled system modeling and behavioral decision frameworks (PMT, PADM).",
+          "zh": "擅長耦合系統模型與行為決策框架（PMT、PADM）。"
+        },
+        "items": [
+          "Agent-Based Modeling",
+          "Numerical Modeling",
+          "Hydrology & Groundwater",
+          "Risk & Resilience Analysis",
+          "Climate Adaptation",
+          "Monte Carlo Simulation"
+        ]
+      },
+      {
+        "id": "programming",
+        "title": {
+          "en": "Programming & Tools",
+          "zh": "程式設計與工具"
+        },
+        "description": {
+          "en": "Building computational workflows and data pipelines",
+          "zh": "建構計算流程與資料管線"
+        },
+        "extra": {
+          "en": "Proficient in end-to-end data workflows from acquisition to visualization and reporting.",
+          "zh": "精通從資料取得到視覺化與報告產出的端到端資料流程。"
+        },
+        "items": [
+          "Python (NumPy, Pandas, Matplotlib)",
+          "GIS (QGIS, ArcGIS)",
+          "SQL & Data Management",
+          "Git & Version Control",
+          "Jupyter Notebooks",
+          "LaTeX"
+        ]
+      },
+      {
+        "id": "ai",
+        "title": {
+          "en": "AI & Emerging Tech",
+          "zh": "AI 與新興技術"
+        },
+        "description": {
+          "en": "Applying machine learning and LLMs to research challenges",
+          "zh": "將機器學習與大型語言模型應用於研究挑戰"
+        },
+        "extra": {
+          "en": "Exploring LLM-based agents (GPT, Gemma, DeepSeek) for decision simulation and research automation.",
+          "zh": "探索基於 LLM 的代理人（GPT、Gemma、DeepSeek）用於決策模擬與研究自動化。"
+        },
+        "items": [
+          "LLM-Enabled Agents",
+          "Machine Learning Basics",
+          "Prompt Engineering",
+          "Multi-Agent Systems",
+          "Automated Workflows"
+        ]
+      },
+      {
+        "id": "communication",
+        "title": {
+          "en": "Communication & Collaboration",
+          "zh": "溝通與合作"
+        },
+        "description": {
+          "en": "Translating complex findings into actionable insights",
+          "zh": "將複雜發現轉化為可行的洞見"
+        },
+        "extra": {
+          "en": "Experienced in presenting research at international conferences and collaborating across diverse teams.",
+          "zh": "擁有在國際會議發表研究與跨領域團隊合作的經驗。"
+        },
+        "items": [
+          "Scientific Writing",
+          "Data Visualization",
+          "Conference Presentations",
+          "Cross-Disciplinary Teamwork",
+          "Bilingual Communication"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "title": {
+      "en": "Experience & Education",
+      "zh": "經歷與教育"
+    },
+    "categories": [
+      {
+        "id": "professional",
+        "title": {
+          "en": "Professional Experience",
+          "zh": "專業經歷"
+        },
+        "items": [
+          {
+            "id": "ncu_ra",
+            "title": {
+              "en": "Research Assistant, Surface Hydrology Group",
+              "zh": "研究助理，地表水文組"
+            },
+            "institution": {
+              "en": "National Central University",
+              "zh": "國立中央大學"
+            },
+            "date": {
+              "en": "Aug 2023 – Present",
+              "zh": "2023年8月 – 至今"
+            },
+            "bullets": {
+              "en": [
+                "Developed agent-based models for flood adaptation using cognitive frameworks (PMT, PADM)",
+                "Integrated hazard, exposure, vulnerability, and financial modules in a coupled ABM system",
+                "Explored LLM-enabled agents for behavioral decision simulation"
+              ],
+              "zh": [
+                "使用認知框架（PMT、PADM）開發洪水調適的代理人基模型",
+                "整合災害、曝露、脆弱度與財務模組於耦合代理人基模型系統",
+                "探索 LLM 賦能的代理人用於行為決策模擬"
+              ]
+            },
+            "summary": {
+              "en": "Responsible for developing agent-based models for flood adaptation, integrating cognitive behavior and disaster risk modules",
+              "zh": "負責開發洪水調適的代理人基模型，整合認知行為與災害風險模組"
+            }
+          },
+          {
+            "id": "ncu_gra",
+            "title": {
+              "en": "Graduate Research Assistant",
+              "zh": "研究生助理"
+            },
+            "institution": {
+              "en": "National Central University",
+              "zh": "國立中央大學"
+            },
+            "date": {
+              "en": "Sep 2021 – Jul 2023",
+              "zh": "2021年9月 – 2023年7月"
+            },
+            "bullets": {
+              "en": [
+                "Conducted field investigations and numerical modeling for submarine groundwater discharge (SGD)",
+                "Applied THMC3D model and ERT profiles to study coastal aquifer salinity dynamics",
+                "Analyzed groundwater-surface water interactions in Taoyuan coastal area"
+              ],
+              "zh": [
+                "進行海底地下水排放（SGD）的現地調查與數值模擬",
+                "應用 THMC3D 模型與電阻率剖面研究沿海含水層鹽化動態",
+                "分析桃園沿海地區的地下水與地表水交互作用"
+              ]
+            },
+            "summary": {
+              "en": "Conducted field investigations and numerical simulations of groundwater discharge and salinity dynamics in Taoyuan coastal area",
+              "zh": "進行桃園沿海地下水排放與鹽化動態的現地調查與數值模擬"
+            }
+          }
+        ]
+      },
+      {
+        "id": "education",
+        "title": {
+          "en": "Education",
+          "zh": "學歷"
+        },
+        "items": [
+          {
+            "id": "ncu_ms",
+            "title": {
+              "en": "M.S. in Hydrological and Oceanic Sciences",
+              "zh": "水文與海洋科學碩士"
+            },
+            "institution": {
+              "en": "National Central University, Taiwan",
+              "zh": "國立中央大學，台灣"
+            },
+            "date": {
+              "en": "Sep 2021 – Jul 2023",
+              "zh": "2021年9月 – 2023年7月"
+            },
+            "bullets": {
+              "en": [
+                "Thesis: Submarine Groundwater Discharge and Salinity Dynamics in Coastal Taoyuan",
+                "Integrated field data with THMC3D numerical modeling",
+                "Published research on groundwater-ocean interactions"
+              ],
+              "zh": [
+                "論文：桃園沿海海底地下水排放與鹽化動態",
+                "整合現地資料與 THMC3D 數值模擬",
+                "發表地下水-海洋交互作用研究"
+              ]
+            },
+            "summary": {
+              "en": "Thesis research on submarine groundwater discharge and salinity in coastal Taoyuan, combining field observations and numerical modeling",
+              "zh": "論文研究桃園沿海地下水排放與鹽化，結合現地觀測與數值模擬"
+            }
+          },
+          {
+            "id": "ncu_bs",
+            "title": {
+              "en": "B.S. in Earth Sciences",
+              "zh": "地球科學學士"
+            },
+            "institution": {
+              "en": "National Central University, Taiwan",
+              "zh": "國立中央大學，台灣"
+            },
+            "date": {
+              "en": "Sep 2017 – Jun 2021",
+              "zh": "2017年9月 – 2021年6月"
+            },
+            "bullets": {
+              "en": [
+                "Built foundation in hydrology, geophysics, and environmental sciences",
+                "Developed analytical and quantitative skills through field and lab work"
+              ],
+              "zh": [
+                "奠定水文學、地球物理與環境科學基礎",
+                "透過野外與實驗室工作培養分析與定量技能"
+              ]
+            },
+            "summary": {
+              "en": "Built foundation in hydrology, geophysics, and environmental sciences",
+              "zh": "奠定水文、地球物理與環境科學基礎"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": {
+      "en": "Projects & Portfolio",
+      "zh": "專案作品"
+    },
+    "items": [
+      {
+        "id": "ai-trader",
+        "name": {
+          "en": "AI-Trader Ollama",
+          "zh": "AI-Trader Ollama 全自動交易系統"
+        },
+        "description": {
+          "en": "A fully autonomous stock trading system using 6 specialized LLM agents (Analyst, Risk, Trader) with RAG memory and 28+ market tools to analyze NASDAQ-100.",
+          "zh": "全自動股票交易系統，使用 6 個專門的 LLM 代理人（分析師、風險控管、交易員），結合 RAG 記憶與 28+ 種市場工具來分析 NASDAQ-100。"
+        },
+        "fullDescription": {
+          "en": "AI-Trader Ollama is a cutting-edge autonomous trading platform where six specialized AI agents collaborate to analyze markets and execute trades. The system features a 'Market Analyst', 'Risk Manager', and 'Trader' who debate and reach consensus. It utilizes a Retrieval-Augmented Generation (RAG) memory system to learn from historical trading decisions. The platform integrates real-time data to analyze 118+ NASDAQ stocks, executing trades with optimized speed (6-7 min cycles). A real-time dashboard visualizes agent discussions, tool usage, and portfolio performance.",
+          "zh": "AI-Trader Ollama 是一個尖端的自動化交易平台，由六個專門的 AI 代理人協作分析市場並執行交易。系統包含「市場分析師」、「風險經理」與「交易員」，他們透過辯論達成共識。它利用檢索增強生成（RAG）記憶系統從歷史交易決策中學習。平台整合即時數據分析 118+ 檔 NASDAQ 股票，並以優化的速度（6-7 分鐘週期）執行交易。即時儀表板將代理人的討論、工具使用與投資組合表現視覺化。"
+        },
+        "image": "assets/images/projects/ai-trader/cover.jpg",
+        "tags": [
+          "Python",
+          "LLM Agents",
+          "RAG",
+          "Clean Architecture"
+        ],
+        "links": {
+          "github": "https://github.com/WenyuChiou/ai-trader-ollama",
+          "demo": ""
+        }
+      },
+      {
+        "id": "event-driven",
+        "name": {
+          "en": "Event-Driven Trading Strategy",
+          "zh": "事件驅動交易策略 (Hydraulic Jump)"
+        },
+        "description": {
+          "en": "A machine learning-based trading system inspired by the 'Hydraulic Jump' fluid dynamics concept to detect market reversal events following rapid price declines.",
+          "zh": "基於機器學習的交易系統，靈感來自流體力學中的「水躍（Hydraulic Jump）」概念，用於偵測價格快速下跌後的市場反轉事件。"
+        },
+        "fullDescription": {
+          "en": "This project implements a unique event-driven trading strategy inspired by the 'Hydraulic Jump' phenomenon in fluid dynamics. It identifies market anomalies where rapid price declines (supercritical flow) are followed by sudden reversals (the jump). The system generates over 200+ alpha factors combining behavioral finance and technical indicators. It employs machine learning models to predict these reversal events and includes a comprehensive backtesting engine with SHAP value analysis for interpretability.",
+          "zh": "本專案實作了一個獨特的事件驅動交易策略，靈感來自流體力學中的「水躍」現象。它識別價格快速下跌（超臨界流）後隨即發生突然反轉（水躍）的市場異常情況。系統生成超過 200+ 個結合行為財務學與技術指標的 alpha 因子。它採用機器學習模型來預測這些反轉事件，並包含全面的回測引擎與 SHAP 值分析以提供可解釋性。"
+        },
+        "image": "assets/images/projects/event-driven/cover.jpg",
+        "tags": [
+          "Python",
+          "Machine Learning",
+          "Alpha Mining",
+          "Backtesting"
+        ],
+        "links": {
+          "github": "https://github.com/WenyuChiou/Event-Driven-Strategy",
+          "paper": ""
+        }
+      },
+      {
+        "id": "abm-flood",
+        "name": {
+          "en": "Agent-Based Flood Adaptation Model",
+          "zh": "代理人基模型洪水調適模型"
+        },
+        "description": {
+          "en": "A coupled ABM framework simulating household flood adaptation decisions under social heterogeneity, integrating cognitive models (PMT/PADM) with hazard and financial modules.",
+          "zh": "耦合的代理人基模型框架，模擬在社會異質性下家庭的洪水調適決策，整合認知模型（PMT/PADM）與災害及財務模組。"
+        },
+        "fullDescription": {
+          "en": "This project develops a comprehensive agent-based modeling system to simulate long-term household adaptation to flood risk. The framework incorporates Protection Motivation Theory (PMT) and Protective Action Decision Model (PADM) to represent cognitive decision-making processes. It distinguishes between majority group (MG) and non-majority group (NMG) households to account for social heterogeneity in resources, risk perception, and adaptation capacity. The model is coupled with hazard modules (flood depth grids), exposure tracking, vulnerability assessment, and household financial simulation.",
+          "zh": "本專案開發一套全面的代理人基模型系統，模擬家庭對洪水風險的長期調適行為。框架整合保護動機理論（PMT）與保護行動決策模型（PADM）來表達認知決策過程。模型區分主流群體（MG）與非主流群體（NMG）家庭，以考量資源、風險認知與調適能力的社會異質性。模型與災害模組（洪水深度網格）、曝露追蹤、脆弱度評估與家庭財務模擬耦合。"
+        },
+        "image": "assets/images/projects/abm-flood/cover.jpg",
+        "tags": [
+          "Python",
+          "ABM",
+          "Risk Analysis",
+          "LLM Agents"
+        ],
+        "links": {
+          "github": "",
+          "demo": "",
+          "paper": ""
+        }
+      },
+      {
+        "id": "groundwater",
+        "name": {
+          "en": "Coastal Groundwater Flow Modeling",
+          "zh": "沿海地下水流動模擬"
+        },
+        "description": {
+          "en": "Numerical simulation of submarine groundwater discharge and salinity dynamics in Taoyuan coastal aquifer using THMC3D, validated with ERT field profiles.",
+          "zh": "使用 THMC3D 進行桃園沿海含水層的海底地下水排放與鹽化動態數值模擬，並以電阻率剖面驗證。"
+        },
+        "fullDescription": {
+          "en": "This study investigated submarine groundwater discharge (SGD) and salinity intrusion in the Taoyuan coastal aquifer system using a coupled field-modeling approach. We conducted electrical resistivity tomography (ERT) surveys to map subsurface salinity distributions and combined these with hydrological and geological data. The THMC3D numerical model was calibrated to simulate groundwater flow, solute transport, and density-driven processes.",
+          "zh": "本研究採用耦合現地-模型方法，調查桃園沿海含水層系統的海底地下水排放（SGD）與鹽化入侵。我們進行電阻率層析成像（ERT）調查以繪製地下鹽度分布，並結合水文與地質資料。THMC3D 數值模型經過校準以模擬地下水流動、溶質傳輸與密度驅動過程。"
+        },
+        "image": "assets/images/projects/groundwater/cover.jpg",
+        "tags": [
+          "Numerical Modeling",
+          "Hydrology",
+          "THMC3D",
+          "GIS"
+        ],
+        "links": {
+          "github": "",
+          "paper": ""
+        }
+      }
+    ]
+  },
+  "publications": {
+    "title": {
+      "en": "Research & Highlights",
+      "zh": "研究與成果"
+    },
+    "items": [
+      {
+        "id": "agu2025",
+        "type": {
+          "en": "Conference (Upcoming)",
+          "zh": "會議（即將發表）"
+        },
+        "title": {
+          "en": "Modeling Long-Term Household Flood Adaptation under Social Heterogeneity: A Coupled Agent-Based Modeling Framework",
+          "zh": "在社會異質性下的長期家庭洪水調適模型：耦合代理人基模型框架"
+        },
+        "authors": "Wenyu Chiou, Y. C. Ethan Yang, Tomohiro Tanaka, Sarawut Jamrussri, Shi Feng",
+        "venue": "AGU Fall Meeting 2025 (San Francisco/New Orleans)",
+        "description": {
+          "en": "Presented a coupled agent-based modeling framework to examine long-term household flood adaptation pathways under social heterogeneity.",
+          "zh": "發表耦合代理人基模型框架，探討社會異質性下的長期家庭洪水調適路徑。"
+        },
+        "highlight": true,
+        "links": {
+          "poster": "assets/documents/publications/agu2025-poster.pdf"
+        }
+      },
+      {
+        "id": "agu2023-sgd",
+        "type": {
+          "en": "Conference Abstract",
+          "zh": "會議摘要"
+        },
+        "title": {
+          "en": "Integrating Electrical Resistivity Tomography Techniques, Field Observations, and Numerical Simulations to Investigate Dynamics of Submarine Groundwater Discharge",
+          "zh": "整合電阻率層析成像技術、現地觀測與數值模擬以調查海底地下水排放動力學"
+        },
+        "authors": "M.H. Li, W. Chiou, C.C. Chen",
+        "venue": "AGU Fall Meeting 2023 (H53I-1455)",
+        "description": {
+          "en": "Investigated the spatiotemporal dynamics of SGD using coupled ERT and numerical modeling approaches.",
+          "zh": "使用耦合 ERT 與數值模擬方法調查 SGD 的時空動力學。"
+        },
+        "highlight": false,
+        "links": {}
+      },
+      {
+        "id": "thesis-2023",
+        "type": {
+          "en": "Master's Thesis",
+          "zh": "碩士論文"
+        },
+        "title": {
+          "en": "Study on the characteristics of submarine groundwater discharge in Taoyuan coastal zone",
+          "zh": "桃園海岸帶地下水出流特徵研究"
+        },
+        "authors": "Wenyu Chiou (Advisor: Ming-Hsu Li)",
+        "venue": "National Central University, 2023",
+        "description": {
+          "en": "Master's thesis characterizing the SGD processes in Taoyuan's coastal aquifer.",
+          "zh": "碩士論文，表徵桃園沿海含水層的 SGD 過程。"
+        },
+        "highlight": false,
+        "links": {
+          "pdf": "assets/documents/publications/thesis-2023.pdf"
+        }
+      },
+      {
+        "id": "jtae-2020",
+        "type": {
+          "en": "Journal Article",
+          "zh": "期刊論文"
+        },
+        "title": {
+          "en": "Seasonal differences in water and energy balance of evergreen broad-leaved forests in Central Taiwan",
+          "zh": "臺灣中部常綠闊葉林之水與能量收支季節性差異"
+        },
+        "authors": "Chiou, W., Lee, M.H., Chen, G.Y., Chen, P.Y.",
+        "venue": "Journal of Taiwan Agricultural Engineering, 66(2), 2020",
+        "description": {
+          "en": "Analyzed the seasonal variations in canopy water energy budgets in subtropical mountain forests.",
+          "zh": "分析亞熱帶山區森林冠層水能量收支的季節性變化。"
+        },
+        "highlight": false,
+        "links": {}
+      }
+    ]
+  },
+  "contact": {
+    "title": {
+      "en": "Get In Touch",
+      "zh": "聯絡方式"
+    },
+    "intro": {
+      "en": "I'm always open to discussing research opportunities, collaborations, or just connecting. Feel free to reach out!",
+      "zh": "我很樂意討論研究機會、合作或單純交流。歡迎隨時聯繫！"
+    },
+    "methods": [
+      {
+        "id": "email",
+        "label": {
+          "en": "Email",
+          "zh": "電子郵件"
+        },
+        "value": "wec325@lehigh.edu",
+        "link": "mailto:wec325@lehigh.edu",
+        "icon": "@"
+      },
+      {
+        "id": "github",
+        "label": {
+          "en": "GitHub",
+          "zh": "GitHub"
+        },
+        "value": "github.com/WenyuChiou",
+        "link": "https://github.com/WenyuChiou",
+        "icon": "GH"
+      },
+      {
+        "id": "linkedin",
+        "label": {
+          "en": "LinkedIn",
+          "zh": "LinkedIn"
+        },
+        "value": "linkedin.com/in/wenyu-chiou",
+        "link": "https://www.linkedin.com/in/wenyu-chiou",
+        "icon": "in"
+      },
+      {
+        "id": "scholar",
+        "label": {
+          "en": "Google Scholar",
+          "zh": "Google 學術"
+        },
+        "value": "View Profile",
+        "link": "https://scholar.google.com/yourprofile",
+        "icon": "GS"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": {
+      "en": "© 2025 Wenyu Chiou. All rights reserved.",
+      "zh": "© 2025 邱文瑜。保留所有權利。"
+    },
+    "backToTop": {
+      "en": "Back to top ↑",
+      "zh": "返回頂部 ↑"
+    }
+  },
+  "navigation": {
+    "about": {
+      "en": "About",
+      "zh": "關於我"
+    },
+    "skills": {
+      "en": "Skills",
+      "zh": "技能"
+    },
+    "experience": {
+      "en": "Experience",
+      "zh": "經歷"
+    },
+    "projects": {
+      "en": "Projects",
+      "zh": "專案作品"
+    },
+    "publications": {
+      "en": "Publications",
+      "zh": "研究與成果"
+    },
+    "contact": {
+      "en": "Contact",
+      "zh": "聯絡方式"
+    }
+  },
+  "ui": {
+    "showDetails": {
+      "en": "Show details",
+      "zh": "顯示細節"
+    },
+    "hideDetails": {
+      "en": "Hide details",
+      "zh": "隱藏細節"
+    },
+    "downloadCV": {
+      "en": "Download CV",
+      "zh": "下載履歷"
+    },
+    "contactMe": {
+      "en": "Contact Me",
+      "zh": "聯絡我"
+    },
+    "moreDetails": {
+      "en": "More Details",
+      "zh": "更多細節"
+    },
+    "github": {
+      "en": "GitHub",
+      "zh": "GitHub"
+    }
+  }
+}

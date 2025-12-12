@@ -1,0 +1,38 @@
+{
+  "analytics": {
+    "gaId": "G-XXXXXXXXXX",
+    "enabled": false,
+    "comment": "Replace G-XXXXXXXXXX with your actual Google Analytics Measurement ID. Set enabled to true once configured."
+  },
+  "theme": {
+    "accentColor": "#0077b6",
+    "accentLight": "#48cae4",
+    "accentHover": "#005f8f"
+  },
+  "seo": {
+    "title": "Wenyu Chiou | Portfolio",
+    "description": "Data-Driven Researcher & Analyst specializing in hydrology, flood risk adaptation, and agent-based modeling",
+    "keywords": [
+      "hydrology",
+      "flood risk",
+      "agent-based modeling",
+      "data science",
+      "climate adaptation",
+      "disaster risk analytics",
+      "submarine groundwater discharge",
+      "ABM",
+      "research"
+    ],
+    "author": "Wenyu Chiou",
+    "ogImage": "assets/images/profile/avatar.jpg"
+  },
+  "social": {
+    "email": "wec325@lehigh.edu",
+    "github": "https://github.com/WenyuChiou",
+    "linkedin": "https://www.linkedin.com/in/wenyu-chiou",
+    "scholar": "",
+    "orcid": "",
+    "researchgate": "",
+    "comment": "Fill in your social media profile URLs"
+  }
+}
