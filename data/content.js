@@ -13,8 +13,8 @@ window.contentData = {
             "zh": "里海大學 | 巨災模型與韌性中心"
         },
         "description": {
-            "en": "Specializing in Quantitative Trading, Strategy Development, and LLM Applications. Background in Catastrophe Modeling and Risk Resilience.",
-            "zh": "專注於量化交易、策略開發與 LLM 應用。具備巨災模型與風險韌性分析背景。"
+            "en": "Where Water Meets Wall Street — I model disasters, decode markets, and teach AI to think like humans.",
+            "zh": "當水文遇上華爾街 — 我模擬災害、解構市場，並讓 AI 學會像人類一樣思考。"
         },
         "avatar": "assets/images/profile/avatar.jpg",
         "cv": {
@@ -37,14 +37,16 @@ window.contentData = {
         },
         "paragraphs": {
             "en": [
-                "I am a Ph.D. Candidate in Civil & Environmental Engineering at Lehigh University, bridging the gap between hydrological science and computational intelligence.",
-                "My research focuses on **Catastrophe Modeling** and **Agent-Based Modeling (ABM)**, integrating **Financial Assessment** (insurance mechanisms) and **Quantitative Social Science** (survey analysis) to simulate complex human-water interactions.",
-                "Beyond academia, I am deeply passionate about **Quantitative Trading** and **Strategy Development**. I leverage my background in stochastic modeling and risk analysis to build automated trading systems, exploring the intersection of financial markets and Large Language Model (LLM) applications."
+                "I'm not your typical researcher. I see patterns where others see chaos — whether it's predicting how a community responds to a flood or finding alpha in the turbulence of financial markets.",
+                "**By Day:** I build Agent-Based Models that simulate thousands of households making life-altering decisions under disaster stress. I integrate flood insurance economics, behavioral psychology (PMT/PADM), and survey-driven social science into simulations that policy-makers can actually use.",
+                "**By Night:** I'm a quant enthusiast who treats trading like a physics problem. I've built multi-agent LLM trading systems, applied the 'Hydraulic Jump' concept from fluid dynamics to detect market reversals, and I'm constantly exploring how AI can make smarter decisions than humans.",
+                "**My Superpower?** Connecting dots across disciplines that rarely talk to each other — hydrology, catastrophe modeling, behavioral science, quantitative finance, and cutting-edge AI. I thrive at the intersections."
             ],
             "zh": [
-                "我是里海大學 (Lehigh University) 土木與環境工程系的博士候選人，致力於連結水文科學與計算智慧。",
-                "我的研究專注於 **巨災模型 (Catastrophe Modeling)** 與 **代理人基模型 (ABM)**，整合 **財務評估** (保險機制) 與 **量化社會科學** (問卷分析) 來模擬複雜的人水系統互動。",
-                "在學術之外，我對 **量化交易** 與 **策略開發** 充滿熱情。我運用隨機模型與風險分析的背景來建構自動化交易系統，並積極探索金融市場與大型語言模型 (LLM) 應用的交叉領域。"
+                "我不是典型的研究者。我在混沌中看見模式——無論是預測社區如何應對洪災，還是在金融市場的波動中發現 Alpha。",
+                "**白天：** 我建構代理人基模型，模擬數千戶家庭在災害壓力下做出改變人生的決策。我將洪水保險經濟學、行為心理學 (PMT/PADM) 和問卷社會科學整合進可供決策者實際使用的模擬系統。",
+                "**夜晚：** 我是個量化交易愛好者，把交易當作物理問題來解。我建過多代理人 LLM 交易系統、把流體力學的「水躍」概念應用到偵測市場反轉，並持續探索 AI 如何做出比人類更聰明的決策。",
+                "**我的超能力？** 連結那些很少對話的領域——水文學、巨災模型、行為科學、量化金融與前沿 AI。我在交叉點上茁壯成長。"
             ]
         },
         "infoCards": {
