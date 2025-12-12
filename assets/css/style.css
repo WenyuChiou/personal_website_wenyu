@@ -349,15 +349,7 @@
       bottom: 0;
     }
 
-    .hero-avatar::after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 50%;
-      background: var(--color-accent);
-      border-radius: 50%;
-      top: 20%;
-    }
+
 
     /* ========== About Section ========== */
     .about {

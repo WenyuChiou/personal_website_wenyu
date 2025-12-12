@@ -444,7 +444,7 @@ window.contentData = {
                     "en": "This project implements a unique event-driven trading strategy inspired by the 'Hydraulic Jump' phenomenon in fluid dynamics. It identifies market anomalies where rapid price declines (supercritical flow) are followed by sudden reversals (the jump). The system generates over 200+ alpha factors combining behavioral finance and technical indicators. It employs machine learning models to predict these reversal events and includes a comprehensive backtesting engine with SHAP value analysis for interpretability.",
                     "zh": "本專案實作了一個獨特的事件驅動交易策略，靈感來自流體力學中的「水躍」現象。它識別價格快速下跌（超臨界流）後隨即發生突然反轉（水躍）的市場異常情況。系統生成超過 200+ 個結合行為財務學與技術指標的 alpha 因子。它採用機器學習模型來預測這些反轉事件，並包含全面的回測引擎與 SHAP 值分析以提供可解釋性。"
                 },
-                "image": "",
+                "image": "assets/images/projects/event-driven/cover.png",
                 "tags": [
                     "Python",
                     "Machine Learning",
