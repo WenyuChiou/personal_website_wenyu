@@ -26,6 +26,15 @@ function initApp() {
   setupNavigation();
   setupLanguageToggle();
   setupScrollAnimations();
+
+  // 4. Init Effects
+  if (typeof ParticleNetwork !== 'undefined') {
+    new ParticleNetwork('hero-canvas');
+  }
+  if (typeof TypeWriter !== 'undefined') {
+    // Delay slightly to ensure renderAll finished
+    setTimeout(() => new TypeWriter('hero_tagline', false), 500);
+  }
 }
 
 /**

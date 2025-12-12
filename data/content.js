@@ -36,8 +36,16 @@ window.contentData = {
             "zh": "關於我"
         },
         "paragraphs": {
-            "en": [],
-            "zh": []
+            "en": [
+                "I am a Ph.D. Candidate in Civil & Environmental Engineering at Lehigh University, bridging the gap between hydrological science and computational intelligence.",
+                "My research focuses on **Catastrophe Modeling** and **Agent-Based Modeling (ABM)**, simulating complex human-water interactions to enhance climate resilience and infrastructure adaptation.",
+                "Beyond academia, I am deeply passionate about **Quantitative Trading** and **Strategy Development**. I leverage my background in stochastic modeling and risk analysis to build automated trading systems, exploring the intersection of financial markets and Large Language Model (LLM) applications."
+            ],
+            "zh": [
+                "我是里海大學 (Lehigh University) 土木與環境工程系的博士候選人，致力於連結水文科學與計算智慧。",
+                "我的研究專注於 **巨災模型 (Catastrophe Modeling)** 與 **代理人基模型 (ABM)**，透過模擬複雜的人水系統互動，提升氣候韌性與基礎設施調適能力。",
+                "在學術之外，我對 **量化交易** 與 **策略開發** 充滿熱情。我運用隨機模型與風險分析的背景來建構自動化交易系統，並積極探索金融市場與大型語言模型 (LLM) 應用的交叉領域。"
+            ]
         },
         "infoCards": {
             "location": {
