@@ -1620,8 +1620,8 @@
     .project-drawer {
       position: fixed;
       top: 0;
-      right: -70%;
-      width: 65%;
+      right: -100%;
+      width: calc(100% - var(--sidebar-width));
       max-width: 900px;
       height: 100vh;
       background: var(--color-bg);
