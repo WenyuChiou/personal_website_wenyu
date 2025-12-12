@@ -164,56 +164,99 @@ function renderSkills(lang) {
 /**
  * Render Experience & Education
  */
+/**
+ * Render Experience & Education as a Liquid Timeline
+ */
 function renderExperience(lang) {
   const container = document.getElementById('experience-sections');
   if (!container) return;
 
   const data = window.contentData.experience;
 
-  const renderTimeline = (items) => `
-    <div class="timeline">
-      ${items.map(item => `
-        <div class="timeline-item">
-          <div class="exp-header">
-            <div>
-              <div class="exp-title">${item.title[lang]}</div>
-              <div class="exp-institution">${item.institution[lang]}</div>
+  // 1. Merge Professional and Education items into a single array
+  const profItems = data.categories.find(c => c.id === 'professional')?.items || [];
+  const eduItems = data.categories.find(c => c.id === 'education')?.items || [];
+
+  // Add a 'type' flag to distinguishing visuals if needed, though uniform look is cleaner
+  const mergedItems = [
+    ...profItems.map(i => ({ ...i, type: 'work' })),
+    ...eduItems.map(i => ({ ...i, type: 'edu' }))
+  ];
+
+  // 2. Sort by date (Newest First) - Simplistic parsing assumes year is relevant
+  // For now, we manually ordered them in JSON or trust the merged order. 
+  // Let's rely on manual ordering in JSON or simple interleaving if dates overlap.
+  // A simple re-sort based on first 4 digits of date string:
+  const getYear = (str) => parseInt(str.match(/\d{4}/)?.[0] || 0);
+  mergedItems.sort((a, b) => getYear(b.date.en) - getYear(a.date.en));
+
+
+  // 3. Render
+  const html = `
+    <div class="timeline" id="liquid-timeline">
+      <div class="timeline-progress" id="timeline-progress"></div>
+      ${mergedItems.map((item, index) => `
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <!-- Large Image Area -->
+            ${item.image ? `
+            <div class="timeline-img">
+               <img src="${item.image}" alt="${item.title[lang]}">
             </div>
-            <div class="exp-date">${item.date[lang]}</div>
-          </div>
-           <span class="toggle-details" onclick="toggleDetails(this)">${window.contentData.ui.showDetails[lang]}</span>
-          <div class="exp-details">
-            <ul>
-              ${item.bullets[lang].map(d => `<li>${d}</li>`).join('')}
-            </ul>
-             ${item.summary ? `<p class="exp-summary">${item.summary[lang]}</p>` : ''}
+            ` : ''}
+            
+            <div class="timeline-info">
+              <span class="timeline-date">${item.date[lang]}</span>
+              <h3 class="timeline-title">${item.title[lang]}</h3>
+              <div class="timeline-institution">${item.institution[lang]}</div>
+              
+              <div class="timeline-desc">
+                 ${item.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${item.summary[lang]}</p>` : ''}
+                 <ul>
+                    ${item.bullets[lang].slice(0, 3).map(b => `<li>${b}</li>`).join('')}
+                 </ul>
+              </div>
+            </div>
           </div>
         </div>
       `).join('')}
     </div>
   `;
 
-  // We explicitly know the structure of categories from JSON
-  const profExp = data.categories.find(c => c.id === 'professional');
-  const eduExp = data.categories.find(c => c.id === 'education');
-
-  let html = '';
-  if (profExp) {
-    html += `
-        <div class="exp-category">
-            <h3>${profExp.title[lang]}</h3>
-            ${renderTimeline(profExp.items)}
-        </div>`;
-  }
-  if (eduExp) {
-    html += `
-        <div class="exp-category">
-            <h3>${eduExp.title[lang]}</h3>
-            ${renderTimeline(eduExp.items)}
-        </div>`;
-  }
-
   container.innerHTML = html;
+
+  // 4. Initialize Liquid Scroll Effect
+  initLiquidScroll();
+}
+
+function initLiquidScroll() {
+  const timeline = document.getElementById('liquid-timeline');
+  const progressLine = document.getElementById('timeline-progress');
+  if (!timeline || !progressLine) return;
+
+  const handleScroll = () => {
+    const rect = timeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const center = windowHeight / 2;
+
+    // Calculate how much of the timeline has passed the center of the screen
+    let start = rect.top;
+    let end = rect.height;
+
+    // Simple logic: Progress fills from top of timeline to center of screen
+    let scrollPos = (center - start);
+
+    // Clamp values
+    if (scrollPos < 0) scrollPos = 0;
+    if (scrollPos > end) scrollPos = end;
+
+    progressLine.style.height = `${scrollPos}px`;
+  };
+
+  window.removeEventListener('scroll', handleScroll); // cleanup prevent dupe
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // initial call
 }
 
 // Global scope for onclick

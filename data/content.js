@@ -216,6 +216,7 @@ window.contentData = {
                             "en": "National Science and Technology Center for Disaster Reduction (NCDR)",
                             "zh": "國家災害防救科技中心"
                         },
+                        "image": "assets/images/projects/ncdr/cover.jpg",
                         "date": {
                             "en": "Jul 2023 – Aug 2023",
                             "zh": "2023年7月 – 2023年8月"
@@ -247,6 +248,7 @@ window.contentData = {
                             "en": "Institute of Earth Sciences, Academia Sinica",
                             "zh": "中央研究院 地球科學研究所"
                         },
+                        "image": "assets/images/projects/ies/cover.jpg",
                         "date": {
                             "en": "Jul 2021 – Aug 2021",
                             "zh": "2021年7月 – 2021年8月"
@@ -349,6 +351,7 @@ window.contentData = {
                             "en": "Lehigh University, USA",
                             "zh": "里海大學，美國"
                         },
+                        "image": "assets/images/profile/lehigh.jpg",
                         "date": {
                             "en": "Aug 2023 – Present",
                             "zh": "2023年8月 – 至今"
@@ -613,6 +616,28 @@ window.contentData = {
                 "links": {
                     "report": "assets/documents/publications/ncdr-report.pdf"
                 }
+            },
+            {
+                "id": "college-project",
+                "category": "research",
+                "name": {
+                    "en": "College Student Research Project (NSTC)",
+                    "zh": "科技部大專學生研究計畫"
+                },
+                "description": {
+                    "en": "Investigated [Topic details needed] under the guidance of [Advisor Name]. Supported by the National Science and Technology Council (NSTC).",
+                    "zh": "在[指導教授]指導下探討[題目細節]。獲科技部（現國科會）補助。"
+                },
+                "fullDescription": {
+                    "en": "Conducted independent research as an undergraduate student, funded by the NSTC College Student Research Project grant. Focused on [Specific Topic/Methodology].",
+                    "zh": "執行科技部大專學生研究計畫，進行獨立研究。專注於[具體題目/方法]。"
+                },
+                "image": "assets/images/projects/college/cover.jpg",
+                "tags": [
+                    "NSTC Project",
+                    "Undergraduate Research"
+                ],
+                "links": {}
             }
         ]
     },
