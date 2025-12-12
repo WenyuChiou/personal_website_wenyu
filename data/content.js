@@ -255,19 +255,19 @@ window.contentData = {
                         },
                         "bullets": {
                             "en": [
-                                "Investigated coastal groundwater dynamics and subsurface geological structures",
-                                "Assisted in field surveys and data collection for hydrogeological studies",
-                                "Contributed to research on submarine groundwater discharge"
+                                "Analyzed seasonal cycles of water isotope composition and moisture source variations",
+                                "Investigated oxygen and hydrogen isotope distributions and their temporal patterns",
+                                "Studied deuterium excess variations and their relationship to ENSO (El Niño-Southern Oscillation)"
                             ],
                             "zh": [
-                                "調查沿海地下水動力學與地下地質構造",
-                                "協助進行水文地質研究之野外調查與資料收集",
-                                "協助海底地下水排放相關研究"
+                                "分析水同位素組成的季節性循環與水汽來源變化",
+                                "調查氧與氫同位素分布及其時間變化模式",
+                                "研究氘過量變化及其與ENSO（聖嬰-南方振盪）的關係"
                             ]
                         },
                         "summary": {
-                            "en": "Research intern assisting in hydrogeological field studies and data analysis.",
-                            "zh": "協助水文地質野外研究與資料分析的研究實習。"
+                            "en": "Research intern analyzing water isotope geochemistry and atmospheric dynamics.",
+                            "zh": "分析水同位素地球化學與大氣動力學的研究實習。"
                         }
                     },
                     {
