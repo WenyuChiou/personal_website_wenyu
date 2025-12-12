@@ -558,7 +558,8 @@ window.contentData = {
                 "links": {
                     "github": "https://github.com/WenyuChiou/Event-Driven-Strategy",
                     "paper": ""
-                },
+                }
+            },
             {
                 "id": "ies-isotopes",
                 "category": "research",
