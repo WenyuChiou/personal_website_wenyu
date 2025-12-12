@@ -252,6 +252,9 @@ function renderProjects(lang) {
 
   container.innerHTML = window.contentData.projects.items.map(proj => `
     <div class="project-card" onclick="openProjectModal('${proj.id}')">
+      ${proj.image ? `<div class="project-thumbnail" style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; max-height: 180px;">
+        <img src="${proj.image}" alt="${proj.name[lang]}" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>` : ''}
       <div class="project-header">
         <h3>${proj.name[lang]}</h3>
       </div>
