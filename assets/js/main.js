@@ -166,14 +166,8 @@ function renderSkills(lang) {
  */
 /**
  * Render Experience & Education as a Gantt Chart Timeline
- * Horizontal bars showing time spans with overlapping activities
- */
-/**
- * Render Experience & Education
- */
-/**
- * Render Experience & Education as Vertical Timeline with Duration Bars
- * Explicit relative duration visualization as requested
+ * Render Experience & Education as Refined Vertical Timeline
+ * Date on Left Side, clean vertical line, compact layout
  */
 function renderExperience(lang) {
   const container = document.getElementById('experience-sections');
@@ -181,18 +175,12 @@ function renderExperience(lang) {
 
   const data = window.contentData.experience;
 
-  // 1. Get items and define precise dates for duration calculation
-  // Assume: 2017 start for scale calculation
-  const START_YEAR = 2017;
-  const END_YEAR = 2025;
-  const TOTAL_MONTHS = (END_YEAR - START_YEAR + 1) * 12;
-
-  // Manual mapping for precise duration visualization
+  // 1. Get items (Standard merged list)
   const items = [
     { id: 'lehigh_phd', start: new Date(2024, 7), end: new Date(), type: 'edu', color: '#3b82f6' }, // Aug 2024 - Now
     { id: 'ncu_ra', start: new Date(2024, 0), end: new Date(2024, 5), type: 'work', color: '#8b5cf6' }, // Jan - Jun 2024
     { id: 'ncu_ms', start: new Date(2021, 8), end: new Date(2024, 5), type: 'edu', color: '#10b981' }, // Sep 2021 - Jun 2024
-    { id: 'ncu_gra', start: new Date(2021, 8), end: new Date(2023, 6), type: 'work', color: '#06b6d4' }, // Sep 2021 - Jul 2023 (Concurrent)
+    { id: 'ncu_gra', start: new Date(2021, 8), end: new Date(2023, 6), type: 'work', color: '#06b6d4' }, // Sep 2021 - Jul 2023 
     { id: 'ncdr_intern', start: new Date(2022, 6), end: new Date(2022, 7), type: 'intern', color: '#ef4444' }, // Jul - Aug 2022
     { id: 'ncu_undergrad', start: new Date(2017, 8), end: new Date(2021, 5), type: 'edu', color: '#8b5cf6' }, // Sep 2017 - Jun 2021
     { id: 'ies_intern', start: new Date(2020, 6), end: new Date(2020, 7), type: 'intern', color: '#f59e0b' } // Jul - Aug 2020
@@ -209,18 +197,14 @@ function renderExperience(lang) {
 
   const html = `
     <div class="timeline" id="liquid-timeline">
-      <div class="timeline-progress" id="timeline-progress"></div>
       ${items.map(item => {
     const content = getContent(item.id);
     if (!content) return '';
 
-    // Calculate duration metrics
+    // Calculate duration text (kept subtle)
     const start = item.start;
-    const end = item.end || new Date(); // If ongoing
+    const end = item.end || new Date();
     const months = Math.max(1, (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()));
-    const widthPercent = Math.min(100, (months / TOTAL_MONTHS) * 120); // Scale factor
-
-    // Duration text
     const years = Math.floor(months / 12);
     const remMonths = months % 12;
     let durationStr = '';
@@ -234,30 +218,26 @@ function renderExperience(lang) {
 
     return `
         <div class="timeline-item reveal-on-scroll">
+          <!-- Left: Date -->
+          <div class="timeline-left">
+             <span class="timeline-date-label">${content.date[lang]}</span>
+             <span class="timeline-date-duration">${durationStr}</span>
+          </div>
+
+          <!-- Middle: Dot -->
           <div class="timeline-dot" style="border-color: ${item.color};"></div>
+
+          <!-- Right: Content -->
           <div class="timeline-content">
-            <!-- Header -->
             <div class="timeline-header">
-              <div>
-                <h3 class="timeline-title">${content.title[lang]}</h3>
-                <span class="timeline-institution">${content.institution[lang]}</span>
-              </div>
-              <span class="timeline-role-type">${item.type === 'edu' ? (lang === 'en' ? 'Education' : '學歷') : (item.type === 'intern' ? (lang === 'en' ? 'Internship' : '實習') : (lang === 'en' ? 'Work' : '工作'))}</span>
+              <h3 class="timeline-title">${content.title[lang]}</h3>
+              <span class="timeline-role-type" style="color:${item.color}; border-color:${item.color}20; background:${item.color}10;">
+                ${item.type === 'edu' ? (lang === 'en' ? 'Education' : '學歷') : (item.type === 'intern' ? (lang === 'en' ? 'Internship' : '實習') : (lang === 'en' ? 'Work' : '工作'))}
+              </span>
             </div>
             
-            <span class="timeline-date" style="color:${item.color}">${content.date[lang]}</span>
+            <span class="timeline-institution">${content.institution[lang]}</span>
 
-            <!-- Explicit Duration Bar -->
-            <div class="timeline-duration-container">
-               <div class="duration-label">
-                  <span>Duration: ${durationStr}</span>
-               </div>
-               <div class="duration-visual-track">
-                  <div class="duration-visual-bar" style="width: ${Math.max(2, widthPercent)}%; background: ${item.color};"></div>
-               </div>
-            </div>
-
-            <!-- Description -->
             <div class="timeline-desc">
                ${content.summary ? `<p style="margin-bottom:0.5rem; font-style:italic;">${content.summary[lang]}</p>` : ''}
                <ul>
