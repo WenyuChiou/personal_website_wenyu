@@ -5,12 +5,12 @@ window.contentData = {
             "zh": "邱文瑜"
         },
         "title": {
-            "en": "Data-Driven Researcher & Analyst",
-            "zh": "資料導向的研究者與分析師"
+            "en": "Ph.D. Candidate | Civil & Environmental Engineering",
+            "zh": "博士候選人 | 土木與環境工程"
         },
         "tagline": {
-            "en": "Data-Driven Researcher & Analyst",
-            "zh": "資料導向的研究者與分析師"
+            "en": "Lehigh University | Center of Catastrophe Modeling and Resilience",
+            "zh": "里海大學 | 巨災模型與韌性中心"
         },
         "description": {
             "en": "I work across hydrology, flood risk adaptation, and data-driven modeling, focusing on climate resilience and disaster risk analytics.",
@@ -334,6 +334,37 @@ window.contentData = {
                     "zh": "學歷"
                 },
                 "items": [
+                    {
+                        "id": "lehigh_phd",
+                        "title": {
+                            "en": "Ph.D. Candidate in Civil & Environmental Engineering",
+                            "zh": "土木與環境工程 博士候選人"
+                        },
+                        "institution": {
+                            "en": "Lehigh University, USA",
+                            "zh": "里海大學，美國"
+                        },
+                        "date": {
+                            "en": "Aug 2023 – Present",
+                            "zh": "2023年8月 – 至今"
+                        },
+                        "bullets": {
+                            "en": [
+                                "Member of Center of Catastrophe Modeling and Resilience",
+                                "Research focus: Agent-Based Modeling, Flood Risk Adaptation, and Critical Infrastructure Resilience",
+                                "Developing computational models to simulate human-water system interactions under climate change"
+                            ],
+                            "zh": [
+                                "巨災模型與韌性中心 成員",
+                                "研究重點：代理人基模型、洪水風險調適與關鍵基礎設施韌性",
+                                "開發計算模型以模擬氣候變遷下的人水系統互動"
+                            ]
+                        },
+                        "summary": {
+                            "en": "Conducting advanced research on flood adaptation and resilience using agent-based modeling.",
+                            "zh": "使用代理人基模型進行洪水調適與韌性的前瞻研究。"
+                        }
+                    },
                     {
                         "id": "ncu_ms",
                         "title": {
