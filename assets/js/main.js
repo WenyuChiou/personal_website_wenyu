@@ -607,4 +607,125 @@ function setupProjectDrawer() {
 document.addEventListener('DOMContentLoaded', () => {
   // Give slight delay to ensure content.js is loaded
   setTimeout(setupProjectDrawer, 100);
+  setTimeout(setupTimelineNavigation, 150);
 });
+
+/**
+ * Timeline Navigation - Show experience details when clicked
+ */
+function setupTimelineNavigation() {
+  const timelineItems = document.querySelectorAll('.timeline-nav-item');
+  const detailPanel = document.getElementById('experienceDetail');
+  const closeBtn = document.getElementById('experienceDetailClose');
+  const expImage = document.getElementById('expImage');
+  const expInfo = document.getElementById('expInfo');
+
+  if (!timelineItems.length || !detailPanel) return;
+
+  const data = window.contentData;
+  if (!data) return;
+
+  // Experience data mapping (id -> experience details)
+  const experienceData = {
+    'ncu_ra': {
+      title: { en: 'Research Assistant', zh: '研究助理' },
+      institution: { en: 'National Central University', zh: '國立中央大學' },
+      date: { en: 'Jan 2024 – Jun 2024', zh: '2024年1月 – 2024年6月' },
+      image: 'assets/images/文昱_GM20230816.jpg',
+      bullets: {
+        en: [
+          'Developed 3D groundwater flow simulation models for coastal aquifer systems',
+          'Established Nature-Based Solutions (NBS) assessment indicators and evaluation framework',
+          'Integrated hydrogeological modeling with sustainability assessment metrics'
+        ],
+        zh: [
+          '開發沿海含水層系統的 3D 地下水流模擬模型',
+          '建立自然解方（NBS）評估指標與評估架構',
+          '整合水文地質模擬與永續性評估指標'
+        ]
+      }
+    },
+    'ies_intern': {
+      title: { en: 'Research Intern', zh: '研究實習生' },
+      institution: { en: 'Academia Sinica - Institute of Earth Sciences', zh: '中央研究院地球科學研究所' },
+      date: { en: 'Jul 2023 – Aug 2023', zh: '2023年7月 – 2023年8月' },
+      image: 'assets/images/projects/ies/cover.jpg',
+      bullets: {
+        en: [
+          'Conducted water isotope analysis for hydrological research',
+          'Processed and analyzed stable isotope data',
+          'Collaborated with senior researchers on groundwater studies'
+        ],
+        zh: [
+          '進行水同位素分析用於水文研究',
+          '處理和分析穩定同位素數據',
+          '與資深研究員合作進行地下水研究'
+        ]
+      }
+    },
+    'ncdr_intern': {
+      title: { en: 'Research Intern', zh: '研究實習生' },
+      institution: { en: 'National Science and Technology Center for Disaster Reduction', zh: '國家災害防救科技中心' },
+      date: { en: 'Jul 2022 – Aug 2022', zh: '2022年7月 – 2022年8月' },
+      image: 'assets/images/projects/ncdr/cover.jpg',
+      bullets: {
+        en: [
+          'Analyzed climate and disaster data for risk assessment',
+          'Developed data visualization dashboards',
+          'Contributed to disaster prevention research projects'
+        ],
+        zh: [
+          '分析氣候與災害數據進行風險評估',
+          '開發數據可視化儀表板',
+          '參與災害防救研究專案'
+        ]
+      }
+    }
+  };
+
+  function showExperience(expId) {
+    const exp = experienceData[expId];
+    if (!exp) return;
+
+    const lang = currentLang || 'en';
+
+    // Set image
+    expImage.innerHTML = exp.image ? `<img src="${exp.image}" alt="${exp.title[lang]}">` : '';
+
+    // Set info
+    expInfo.innerHTML = `
+      <h2>${exp.title[lang]}</h2>
+      <p class="institution">${exp.institution[lang]}</p>
+      <p class="date">${exp.date[lang]}</p>
+      <ul>
+        ${exp.bullets[lang].map(b => `<li>${b}</li>`).join('')}
+      </ul>
+    `;
+
+    // Show panel
+    detailPanel.classList.add('active');
+
+    // Mark active
+    timelineItems.forEach(item => {
+      item.classList.toggle('active', item.dataset.expId === expId);
+    });
+  }
+
+  function hideExperience() {
+    detailPanel.classList.remove('active');
+  }
+
+  // Event listeners
+  timelineItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const expId = item.dataset.expId;
+      if (experienceData[expId]) {
+        showExperience(expId);
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', hideExperience);
+  }
+}
