@@ -441,7 +441,8 @@ function setupNavigation() {
  * Animations: Scroll Observer
  */
 function setupScrollAnimations() {
-  const observer = new IntersectionObserver((entries) => {
+  // Section visibility observer
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
@@ -450,6 +451,55 @@ function setupScrollAnimations() {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
+    sectionObserver.observe(section);
+  });
+
+  // Timeline item reveal observer
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    item.classList.add('reveal');
+    timelineObserver.observe(item);
+  });
+
+  // Project card reveal observer
+  document.querySelectorAll('.project-card').forEach((card, index) => {
+    card.classList.add('reveal');
+    card.classList.add(`stagger-${(index % 5) + 1}`);
+    timelineObserver.observe(card);
+  });
+
+  // Back to Top button
+  setupBackToTop();
+}
+
+/**
+ * Back to Top Button Functionality
+ */
+function setupBackToTop() {
+  const backToTopBtn = document.getElementById('backToTop');
+  if (!backToTopBtn) return;
+
+  // Show/hide on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  // Scroll to top on click
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 }
