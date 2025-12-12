@@ -218,8 +218,8 @@ window.contentData = {
                         },
                         "image": "assets/images/projects/ncdr/cover.jpg",
                         "date": {
-                            "en": "Jul 2023 – Aug 2023",
-                            "zh": "2023年7月 – 2023年8月"
+                            "en": "Jul 2022 – Aug 2022",
+                            "zh": "2022年7月 – 2022年8月"
                         },
                         "bullets": {
                             "en": [
@@ -351,7 +351,7 @@ window.contentData = {
                             "en": "Lehigh University, USA",
                             "zh": "里海大學，美國"
                         },
-                        "image": "",
+                        "image": "assets/images/Catastophy Modeling Temporary.jpg",
                         "date": {
                             "en": "Aug 2023 – Present",
                             "zh": "2023年8月 – 至今"
@@ -685,7 +685,9 @@ window.contentData = {
                     "zh": "使用耦合 ERT 與數值模擬方法調查 SGD 的時空動力學。"
                 },
                 "highlight": false,
-                "links": {}
+                "links": {
+                    "poster": "assets/documents/publications/agu2024-poster.pdf"
+                }
             },
             {
                 "id": "thesis-2023",
