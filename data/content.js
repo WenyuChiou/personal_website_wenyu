@@ -16,10 +16,9 @@ window.contentData = {
             "en": "Modeling how people decide under risk — from flood insurance choices to community resilience.",
             "zh": "模擬人們在風險下的決策過程——從洪水保險選擇到社區韌性。"
         },
-        "avatar": "assets/images/profile/avatar.jpg",
         "cv": {
-            "en": "assets/documents/CV_Wenyu_Chiou_EN.pdf",
-            "zh": "assets/documents/CV_Wenyu_Chiou_ZH.pdf"
+            "en": "assets/documents/CV_Wenyu_Chiou.pdf",
+            "zh": "assets/documents/CV_Wenyu_Chiou.pdf"
         }
     },
     "social": {
@@ -463,7 +462,7 @@ window.contentData = {
                 "tags": ["AGU 2025", "ABM", "Flood Risk", "Adaptation"],
                 "links": {
                     "github": "https://github.com/WenyuChiou/FLOODABM",
-                    "poster": "#"
+                    "poster": "assets/documents/publications/agu2025-poster.pdf"
                 }
             },
             {
@@ -483,7 +482,7 @@ window.contentData = {
                 },
                 "image": "assets/images/projects/groundwater/anima.gif",
                 "tags": ["AGU 2023", "ERT", "SGD", "Poster"],
-                "links": { "poster": "#" }
+                "links": { "poster": "assets/documents/publications/agu2024-poster.pdf" }
             },
             {
                 "id": "jtae-2020",

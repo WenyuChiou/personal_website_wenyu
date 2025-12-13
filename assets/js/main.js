@@ -163,8 +163,6 @@ function renderSkills(lang) {
 
 /**
  * Render Experience & Education
- * Render Experience & Education as a Gantt Chart Timeline/**
- * Render Experience & Education
  */
 /**
  * Render Experience & Education
@@ -179,34 +177,34 @@ function renderExperience(lang) {
 
   const data = window.contentData.experience;
 
-  // Let's redefine rows correctly.
-  const finalRows = [
+  // Configuration for Horizontal Eras
+  // Each Era is a column in the timeline
+  const eras = [
     {
-      id: 'row_phd',
-      items: [
-        { id: 'lehigh_phd', flex: 1, type: 'edu', color: '#3b82f6' }
+      yearLabel: '2024',
+      top: [
+        { id: 'lehigh_phd', type: 'edu', color: '#3b82f6' }, // PhD
+        { id: 'ncu_ra', type: 'work', color: '#8b5cf6' }     // RA
+      ],
+      bottom: []
+    },
+    {
+      yearLabel: '2021-2023',
+      top: [
+        { id: 'ncu_ms', type: 'edu', color: '#10b981' },
+        { id: 'ncu_gra', type: 'work', color: '#06b6d4' }
+      ],
+      bottom: [
+        { id: 'ncdr_intern', type: 'intern', color: '#ef4444' } // Intern
       ]
     },
     {
-      // RA (Jan 2024 - Jun 2024) - Between PhD and MS
-      id: 'row_ra',
-      items: [
-        { id: 'ncu_ra', flex: 1, type: 'work', color: '#8b5cf6' }
-      ]
-    },
-    {
-      id: 'row_ms',
-      items: [
-        { id: 'ncu_ms', flex: 1.4, type: 'edu', color: '#10b981' },
-        { id: 'ncu_gra', flex: 1, type: 'work', color: '#06b6d4' },
-        { id: 'ncdr_intern', flex: 0.8, type: 'intern', color: '#ef4444' }
-      ]
-    },
-    {
-      id: 'row_bs',
-      items: [
-        { id: 'ncu_undergrad', flex: 1.4, type: 'edu', color: '#8b5cf6' },
-        { id: 'ies_intern', flex: 1, type: 'intern', color: '#f59e0b' }
+      yearLabel: '2017-2021',
+      top: [
+        { id: 'ncu_undergrad', type: 'edu', color: '#8b5cf6' }
+      ],
+      bottom: [
+        { id: 'ies_intern', type: 'intern', color: '#f59e0b' } // Intern
       ]
     }
   ];
@@ -219,11 +217,10 @@ function renderExperience(lang) {
 
     // Manual Overrides
     if (id === 'ncu_ra') {
-      // Enforce Date
       if (item) {
         item = { ...item };
         item.date = { en: 'Jan 2024 – Jun 2024', zh: '2024年1月 - 2024年6月' };
-        item.title = { en: 'Full-time Research Assistant', zh: '專任研究助理' }; // Distinguish from GRA
+        item.title = { en: 'Full-time Research Assistant', zh: '專任研究助理' };
       }
     }
     if (id === 'ncu_gra') {
@@ -246,63 +243,58 @@ function renderExperience(lang) {
     return item;
   };
 
-  const html = `
-    <div class="timeline" id="liquid-timeline">
-      ${finalRows.map(row => {
-    // Expand items with content
-    const rowItems = row.items.map(conf => ({
-      conf,
-      content: getContent(conf.id, conf.type)
-    })).filter(x => x.content); // Only render if content exists
+  const renderCard = (conf, isTop) => {
+    const content = getContent(conf.id, conf.type);
+    if (!content) return '';
 
-    if (rowItems.length === 0) return '';
-
-    // Use the date of the first item (Primary) for the timeline axis
-    const mainItem = rowItems[0];
+    // Class for connecting line direction
+    // If Top, line goes Down. If Bottom, line goes Up.
+    const connectClass = isTop ? 'connect-down' : 'connect-up';
 
     return `
-        <div class="timeline-item reveal-on-scroll">
-          <!-- Left: Date -->
-          <div class="timeline-left">
-             <span class="timeline-date-label">${mainItem.content.date[lang]}</span>
+      <div class="timeline-card-wrapper">
+         <div class="timeline-content horizontal-card ${connectClass}" style="
+             border-left: 4px solid ${conf.color}; 
+         ">
+            <h4 class="h-card-title" style="color:${conf.color}">${content.title[lang]}</h4>
+            <span class="h-card-role">${content.institution[lang]}</span>
+            <span class="h-card-date">${content.date[lang]}</span>
+         </div>
+      </div>
+    `;
+  };
+
+  const html = `
+    <div class="horizontal-timeline-container">
+      <div class="horizontal-axis"></div>
+      
+      <div class="eras-container">
+        ${eras.map(era => `
+          <div class="timeline-era">
+             
+             <!-- Top Section (Career) -->
+             <div class="era-top">
+                ${era.top.map(item => renderCard(item, true)).join('')}
+             </div>
+
+             <!-- Axis Point -->
+             <div class="era-axis-point">
+                <div class="axis-dot"></div>
+                <span class="axis-label">${era.yearLabel}</span>
+             </div>
+
+             <!-- Bottom Section (Intern) -->
+             <div class="era-bottom">
+                ${era.bottom.map(item => renderCard(item, false)).join('')}
+             </div>
+             
           </div>
-
-          <!-- Middle: Dot -->
-          <div class="timeline-dot" style="border-color: ${mainItem.conf.color};"></div>
-
-          <!-- Right: Content Row (Side-by-Side Flex) -->
-          <div class="timeline-content-row">
-            ${rowItems.map(ri => `
-              <div class="timeline-content" style="flex: ${ri.conf.flex}; min-width: 200px;">
-                <div class="timeline-header">
-                  <h3 class="timeline-title" style="font-size: 1.1rem;">${ri.content.title[lang]}</h3>
-                  <span class="timeline-role-type" style="color:${ri.conf.color}; border-color:${ri.conf.color}20; background:${ri.conf.color}10;">
-                    ${ri.conf.type === 'edu' ? (lang === 'en' ? 'Education' : '學歷') : (ri.conf.type === 'intern' ? (lang === 'en' ? 'Internship' : '實習') : (lang === 'en' ? 'Work' : '工作'))}
-                  </span>
-                </div>
-                
-                ${/* Show date for side items if distinct? Or just hide to keep clean? User asked for parallel. 
-                     Maybe show date subtitle for *all* to be clear on duration, since they might differ slightly within the row. */ ''}
-                <span class="timeline-date-sub" style="color:${ri.conf.color}; opacity:0.8;">${ri.content.date[lang]}</span>
-
-                <span class="timeline-institution">${ri.content.institution[lang]}</span>
-                
-                <div class="timeline-desc" style="font-size: 0.85rem;">
-                   ${ri.content.summary ? `<p style="margin-bottom:0.3rem;">${ri.content.summary[lang]}</p>` : ''}
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-        `;
-  }).join('')}
+        `).join('')}
+      </div>
     </div>
   `;
 
   container.innerHTML = html;
-
-  // Re-init scroll
-  initLiquidScroll();
 }
 
 function initLiquidScroll() {
