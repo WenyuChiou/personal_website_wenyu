@@ -13,8 +13,8 @@ window.contentData = {
             "zh": "里海大學 土木與環境工程學系"
         },
         "description": {
-            "en": "Modeling how people decide under risk — from flood insurance choices to community resilience.",
-            "zh": "模擬人們在風險下的決策過程——從洪水保險選擇到社區韌性。"
+            "en": "Modeling how people decide under risk — from flood insurance choices to community resilience using LLM-enhanced Agent-Based Modeling.",
+            "zh": "結合大型語言模型 (LLMs)，模擬人們在風險下的決策過程——從洪水保險選擇到社區韌性。"
         },
         "cv": {
             "en": "assets/documents/CV_Wenyu_Chiou.pdf",

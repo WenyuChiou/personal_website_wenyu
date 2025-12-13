@@ -474,31 +474,34 @@ function setupLanguageToggle() {
  */
 function setupNavigation() {
   const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('.main-content'); // Click outside to close
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const spans = menuToggle.querySelectorAll('span');
-      if (navLinks.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-      } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-      }
+  if (menuToggle && sidebar) {
+    // Toggle on click
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent immediate close
+      sidebar.classList.toggle('active');
+      menuToggle.classList.toggle('active');
     });
 
-    // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
+    // Close when clicking outside (on main content)
+    if (mainContent) {
+      mainContent.addEventListener('click', () => {
+        if (sidebar.classList.contains('active')) {
+          sidebar.classList.remove('active');
+          menuToggle.classList.remove('active');
+        }
+      });
+    }
+
+    // Close when clicking a link in sidebar (e.g. #contact)
+    // But allow clicking language toggle without closing? Maybe closing is fine.
+    sidebar.querySelectorAll('a, .timeline-nav-item').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        // Only close on mobile (check window width or just always remove active)
+        sidebar.classList.remove('active');
+        menuToggle.classList.remove('active');
       });
     });
   }
