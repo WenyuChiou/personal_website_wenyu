@@ -22,7 +22,7 @@ window.contentData = {
         }
     },
     "social": {
-        "email": "wec325@lehigh.edu",
+        "email": "wec324@lehigh.edu",
         "github": "https://github.com/WenyuChiou",
         "linkedin": "https://www.linkedin.com/in/wenyu-chiou",
         "scholar": "",
@@ -746,8 +746,8 @@ window.contentData = {
                     "en": "Email",
                     "zh": "電子郵件"
                 },
-                "value": "wec325@lehigh.edu",
-                "link": "mailto:wec325@lehigh.edu",
+                "value": "wec324@lehigh.edu",
+                "link": "mailto:wec324@lehigh.edu",
                 "icon": "@"
             },
             {
